@@ -1,0 +1,8 @@
+
+  
+  svg {
+    border: 1px solid #ccc; /* A light border around the SVG */
+    background-color: #fff; /* White background for the SVG */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* A subtle shadow for depth */
+  }
+  

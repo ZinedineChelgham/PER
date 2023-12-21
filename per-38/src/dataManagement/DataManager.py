@@ -22,8 +22,22 @@ transformed_data = [transform_answers(resp) for resp in respondents_data]
 transformed_json = json.dumps(transformed_data, indent=4)
 
 #write the data to a json file
-with open('transformed.json', 'w') as file:
-    file.write(transformed_json)
+# with open('transformed.json', 'w') as file:
+#     file.write(transformed_json)
 
-# For demonstration, printing the first few entries
-# print(transformed_json[:1000])  # Print a portion to check the structure
+# make another json file for each "Ville" with its count from the transformed data 
+# and write it to a json file
+ville = {}
+for i in transformed_data:
+    if i['Ville'] in ville:
+        ville[i['Ville']] += 1
+    else:
+        ville[i['Ville']] = 1
+ville_json = json.dumps(ville, indent=4)
+with open('ville.json', 'w') as file:
+    file.write(ville_json)
+
+
+
+
+
