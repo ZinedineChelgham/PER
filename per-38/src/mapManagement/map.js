@@ -18,8 +18,7 @@ const FranceMap = ({ data }) => {
                          .scale(2100);
     const pathGenerator = d3.geoPath().projection(projection);
 
-                    
-
+              
 
     // Draw the map
     svg.selectAll(".region")
@@ -75,7 +74,6 @@ const FranceMap = ({ data }) => {
   return (
     <div className="map-container">
       <div className="tooltip" ref={tooltipRef} />
-
       <svg ref={svgRef} width={width} height={height} />
     </div>
   );

@@ -1,22 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './header/header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import FranceMap from './mapManagement/map';
-import data from './mapManagement/updated_cities.json';
-
+import React, { useState } from "react";
+import { Tabs, Tab, Typography } from "@mui/material";
+import "./App.css";
+import TabContent from "./utilsComponents/TabContent";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("presentation");
+
+  const handleTabChange = (event, tabKey) => {
+    setActiveTab(tabKey);
+  };
+
+  // Define a common style object for tabs
+  const tabStyle = {
+    textTransform: "none",
+    fontSize: "1.2rem",
+    // Add other common styles if needed
+  };
+
   return (
     <div className="App">
-      <Header></Header>
-      <div>
-      {/* <div className="app-container"> */}
-      <h1>Responses per University in France</h1>
-      <FranceMap data={data.cities} />
-    </div>    </div>
+      <Typography variant="h2" textAlign={"center"} marginBottom={3}>
+        Specif campus visualization
+      </Typography>
+      <Tabs
+        value={activeTab}
+        onChange={handleTabChange}
+        centered
+        TabIndicatorProps={{ style: { display: "none" } }}
+        sx={{ marginBottom: 3 }}
+      >
+        <Tab
+          label="Présentation du projet"
+          value="presentation"
+          sx={tabStyle}
+        />
+        <Tab label="Cadre général" value="cadre" sx={tabStyle} />
+        <Tab label="Enseignement" value="enseignement" sx={tabStyle} />
+        <Tab label="Recherche" value="recherche" sx={tabStyle} />
+        <Tab label="Administrative" value="administrative" sx={tabStyle} />
+        <Tab label="Carte intéractive" value="carte" sx={tabStyle} />
+      </Tabs>
 
-    // </div>
+      <TabContent tabKey={activeTab} />
+    </div>
   );
 }
 
