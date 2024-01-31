@@ -37,7 +37,7 @@ function App() {
         <Tab label="Cadre général" value="cadre" sx={tabStyle} />
         <Tab label="Enseignement" value="enseignement" sx={tabStyle} />
         <Tab label="Recherche" value="recherche" sx={tabStyle} />
-        <Tab label="Administrative" value="administrative" sx={tabStyle} />
+        <Tab label="Administratif" value="administrative" sx={tabStyle} />
         <Tab label="Carte intéractive" value="carte" sx={tabStyle} />
       </Tabs>
 
