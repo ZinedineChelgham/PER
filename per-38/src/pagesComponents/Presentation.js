@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import map from "../assets/images/map.png";
 import { carousselItems } from "../utils/carousselItemExporter";
 import Carousel from "react-material-ui-carousel";
+import Box from "@mui/material/Box";
 
 function Presentation() {
   return (
@@ -53,9 +54,9 @@ function Presentation() {
       <Grid2 xs={6} height={"100%"} width={"fit-parent"}>
         <Carousel>
           {carousselItems.map((item) => (
-            <div key={item.id}>
+            <Box key={item.id} width={"100%"}>
               <img src={item.image} alt={item.title} />
-            </div>
+            </Box>
           ))}
         </Carousel>
       </Grid2>
