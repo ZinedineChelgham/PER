@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
+import AppreciationPersonnelle from "../graphics/AppreciationPersonnelle";
 
 function Enseignement() {
   const [value, setValue] = useState(0);
@@ -24,7 +25,8 @@ function Enseignement() {
         />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Typography>Contenu de l'onglet Monocritère</Typography>
+        <Typography><AppreciationPersonnelle>
+        </AppreciationPersonnelle></Typography>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography>Contenu de l'onglet Multicritère</Typography>
