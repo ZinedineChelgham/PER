@@ -7,7 +7,8 @@ import logoSpecif from "./assets/images/logoSpecif.png";
 function App() {
   const [activeTab, setActiveTab] = useState("presentation");
 
-  const handleTabChange = (event, tabKey) => {
+  const handleTabChange = (e, tabKey) => {
+    //event remvoed
     setActiveTab(tabKey);
   };
 
@@ -55,7 +56,7 @@ function App() {
         <Tab label="Carte intéractive" value="carte" sx={tabStyle} />
       </Tabs>
 
-      <TabContent tabKey={activeTab} />
+      <TabContent tabKey={activeTab} handleTabChange={handleTabChange} />
     </div>
   );
 }

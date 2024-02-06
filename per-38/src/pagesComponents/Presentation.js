@@ -8,13 +8,13 @@ import Box from "@mui/material/Box";
 import { GraphDataMapper } from "../graphics/GraphExporter";
 import Chart from "../graphics/Chart";
 
-function Presentation() {
+function Presentation({ handleTabChange }) {
   const getFirstGraphOfEachCategory = () => {
     const categ = Object.keys(GraphDataMapper);
     const firstGraphs = [];
     categ.forEach((cat) => {
       const graph = GraphDataMapper[cat][0];
-      if (graph) firstGraphs.push(graph);
+      if (graph) firstGraphs.push({ graph: graph, category: cat });
     });
     console.log(firstGraphs);
     return firstGraphs;
@@ -67,8 +67,16 @@ function Presentation() {
       <Grid2 xs={6} height={"100%"} width={"fit-parent"}>
         <Carousel>
           {getFirstGraphOfEachCategory().map((graph, index) => (
-            <Box width={"100%"} key={index}>
-              <Chart type="pie" data={graph.data} title={graph.title} />
+            <Box
+              width={"100%"}
+              key={index}
+              onClick={(e) => handleTabChange(e, graph.category)}
+            >
+              <Chart
+                type="pie"
+                data={graph.graph.data}
+                title={graph.graph.title}
+              />
             </Box>
           ))}
         </Carousel>

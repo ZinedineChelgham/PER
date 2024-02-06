@@ -7,10 +7,10 @@ import Cadre from "../pagesComponents/Cadre";
 import Presentation from "../pagesComponents/Presentation";
 import Carte from "../pagesComponents/Carte";
 
-const TabContent = ({ tabKey }) => {
+const TabContent = ({ tabKey, handleTabChange }) => {
   switch (tabKey) {
     case "presentation":
-      return <Presentation />;
+      return <Presentation handleTabChange={handleTabChange}/>;
     case "cadre":
       return <Cadre />;
     case "enseignement":
