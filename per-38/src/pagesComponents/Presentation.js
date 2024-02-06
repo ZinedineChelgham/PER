@@ -5,8 +5,21 @@ import map from "../assets/images/map.png";
 import { carousselItems } from "../utils/carousselItemExporter";
 import Carousel from "react-material-ui-carousel";
 import Box from "@mui/material/Box";
+import { GraphDataMapper } from "../graphics/GraphExporter";
+import Chart from "../graphics/Chart";
 
 function Presentation() {
+  const getFirstGraphOfEachCategory = () => {
+    const categ = Object.keys(GraphDataMapper);
+    const firstGraphs = [];
+    categ.forEach((cat) => {
+      const graph = GraphDataMapper[cat][0];
+      if (graph) firstGraphs.push(graph);
+    });
+    console.log(firstGraphs);
+    return firstGraphs;
+  };
+
   return (
     <Grid2
       container
@@ -53,9 +66,9 @@ function Presentation() {
 
       <Grid2 xs={6} height={"100%"} width={"fit-parent"}>
         <Carousel>
-          {carousselItems.map((item) => (
-            <Box key={item.id} width={"100%"}>
-              <img src={item.image} alt={item.title} />
+          {getFirstGraphOfEachCategory().map((graph, index) => (
+            <Box width={"100%"} key={index}>
+              <Chart type="pie" data={graph.data} title={graph.title} />
             </Box>
           ))}
         </Carousel>

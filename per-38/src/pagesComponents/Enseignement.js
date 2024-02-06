@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
-import Chart from "../graphics/Chart";
 import { GraphDataMapper } from "../graphics/GraphExporter";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 
@@ -9,8 +8,6 @@ function Enseignement() {
   const [value, setValue] = useState(0);
 
   const enseignementData = GraphDataMapper.enseignement;
-
-  console.log(enseignementData);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
