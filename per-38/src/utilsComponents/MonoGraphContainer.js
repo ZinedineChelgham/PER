@@ -13,7 +13,6 @@ function MonoGraphContainer({ title, data }) {
 
   const handleIconClick = (iconName) => {
     setGraphType(iconName);
-    console.log(iconName);
   };
 
   return (
@@ -35,7 +34,12 @@ function MonoGraphContainer({ title, data }) {
             onClick={() => handleIconClick("pie")}
           >
             <PieChartIcon
-              style={{ fontSize: "inherit", width: "100px", height: "100px" }}
+              style={{
+                fontSize: "inherit",
+                width: "100px",
+                height: "100px",
+                backgroundColor: graphType === "pie" ? "lightgrey" : "white",
+              }}
             />
           </IconButton>
         </Grid>
@@ -46,7 +50,12 @@ function MonoGraphContainer({ title, data }) {
             onClick={() => handleIconClick("bar")}
           >
             <BarChartIcon
-              style={{ fontSize: "inherit", width: "100px", height: "100px" }}
+              style={{
+                fontSize: "inherit",
+                width: "100px",
+                height: "100px",
+                backgroundColor: graphType === "bar" ? "lightgrey" : "white",
+              }}
             />
           </IconButton>
         </Grid>
