@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import PieChart from "./PieChart";
+import BarPlot from "./BarPlot";
 
 const Chart = ({
   type,
@@ -21,7 +22,15 @@ const Chart = ({
       />
     );
   } else {
-    return <div>Chart type not supported</div>;
+    return (
+      <BarPlot
+        data={data}
+        title={title}
+        width={width}
+        height={height}
+        margin={margin}
+      />
+    );
   }
 };
 
