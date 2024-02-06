@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Tabs, Tab, Typography } from "@mui/material";
 import "./App.css";
 import TabContent from "./utilsComponents/TabContent";
+import logoSpecif from "./assets/images/logoSpecif.png";
 
 function App() {
   const [activeTab, setActiveTab] = useState("presentation");
@@ -19,9 +20,22 @@ function App() {
 
   return (
     <div className="App">
-      <Typography variant="h2" textAlign={"center"} marginBottom={3}>
-        Specif campus visualization
+      <img src={logoSpecif} alt="logo" />
+      <Typography
+        display={"inline-block"}
+        variant="h2"
+        textAlign={"center"}
+        marginBottom={3}
+        style={{
+          left: "50%",
+          transform: "translateX(-50%)",
+          position: "absolute",
+          top: "30px",
+        }}
+      >
+        <span style={{ color: "#c80909" }}>Specif </span>campus visualization
       </Typography>
+
       <Tabs
         value={activeTab}
         onChange={handleTabChange}
