@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
+import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 
 function Administrative() {
   const [value, setValue] = useState(0);

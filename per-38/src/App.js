@@ -33,7 +33,7 @@ function App() {
           top: "30px",
         }}
       >
-        <span style={{ color: "#c80909" }}>Specif </span>campus visualization
+        <span style={{ color: "#c80909" }}>Specif </span>campus viz
       </Typography>
 
       <Tabs

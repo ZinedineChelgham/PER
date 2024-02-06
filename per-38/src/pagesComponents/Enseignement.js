@@ -1,10 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
-import AppreciationPersonnelle from "../graphics/AppreciationPersonnelle";
+import Chart from "../graphics/Chart";
+import { GraphDataMapper } from "../graphics/GraphExporter";
+import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 
 function Enseignement() {
   const [value, setValue] = useState(0);
+
+  const enseignementData = GraphDataMapper.enseignement;
+
+  console.log(enseignementData);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -25,8 +31,13 @@ function Enseignement() {
         />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Typography><AppreciationPersonnelle>
-        </AppreciationPersonnelle></Typography>
+        <Box width={"100%"}>
+          {enseignementData.map((data, index) => (
+            <Box key={index} padding={2} boxSizing="border-box">
+              <MonoGraphContainer data={data.data} title={data.title} />
+            </Box>
+          ))}
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography>Contenu de l'onglet Multicritère</Typography>
