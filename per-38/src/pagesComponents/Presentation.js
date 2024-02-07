@@ -7,6 +7,7 @@ import Carousel from "react-material-ui-carousel";
 import Box from "@mui/material/Box";
 import { GraphDataMapper } from "../graphics/GraphExporter";
 import Chart from "../graphics/Chart";
+import Tooltip from "@mui/material/Tooltip";
 
 function Presentation({ handleTabChange }) {
   const getFirstGraphOfEachCategory = () => {
@@ -67,17 +68,20 @@ function Presentation({ handleTabChange }) {
       <Grid2 xs={6} height={"100%"} width={"fit-parent"}>
         <Carousel>
           {getFirstGraphOfEachCategory().map((graph, index) => (
-            <Box
-              width={"100%"}
-              key={index}
-              onClick={(e) => handleTabChange(e, graph.category)}
-            >
-              <Chart
-                type="pie"
-                data={graph.graph.data}
-                title={graph.graph.title}
-              />
-            </Box>
+            <Tooltip title="Aller à la page" placement="top">
+              <Box
+                width={"100%"}
+                key={index}
+                onClick={(e) => handleTabChange(e, graph.category)}
+                sx={{ cursor: "pointer" }}
+              >
+                <Chart
+                  type="pie"
+                  data={graph.graph.data}
+                  title={graph.graph.title}
+                />
+              </Box>
+            </Tooltip>
           ))}
         </Carousel>
       </Grid2>
