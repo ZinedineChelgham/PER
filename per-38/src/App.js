@@ -1,8 +1,8 @@
+import { Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Tabs, Tab, Typography } from "@mui/material";
 import "./App.css";
-import TabContent from "./utilsComponents/TabContent";
 import logoSpecif from "./assets/images/logoSpecif.png";
+import TabContent from "./utilsComponents/TabContent";
 
 function App() {
   const [activeTab, setActiveTab] = useState("presentation");

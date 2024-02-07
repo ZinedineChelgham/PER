@@ -1,13 +1,11 @@
+import Box from "@mui/material/Box";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
-import Typography from "@mui/material/Typography";
-import map from "../assets/images/map.png";
-import { carousselItems } from "../utils/carousselItemExporter";
 import Carousel from "react-material-ui-carousel";
-import Box from "@mui/material/Box";
-import { GraphDataMapper } from "../graphics/GraphDataMapper";
 import Chart from "../graphics/Chart";
-import Tooltip from "@mui/material/Tooltip";
+import { GraphDataMapper } from "../graphics/GraphDataMapper";
 
 function Presentation({ handleTabChange }) {
   const getFirstGraphOfEachCategory = () => {

@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import { Tabs, Tab, Typography, Box } from "@mui/material";
-import TabPanel from "../utilsComponents/TabPanel";
-import Carousel from "react-material-ui-carousel";
-import { GraphDataMapper } from "../graphics/GraphDataMapper";
-import Chart from "../graphics/Chart";
-import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
-import Grid from "@mui/material/Grid";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
+import React, { useState } from "react";
+import { GraphDataMapper } from "../graphics/GraphDataMapper";
+import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
+import TabPanel from "../utilsComponents/TabPanel";
 
 function Cadre() {
   const [value, setValue] = useState(0);

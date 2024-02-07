@@ -1,12 +1,9 @@
-import React from "react";
-import { Typography, Grid, Paper } from "@mui/material"; // Import necessary MUI components
-import Icon from "@mui/material/Icon"; // Import MUI Icon component
-import MetierAttirant from "../graphics/MetierAttirant";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import PieChartIcon from "@mui/icons-material/PieChart";
+import { Grid } from "@mui/material"; // Import necessary MUI components
 import IconButton from "@mui/material/IconButton";
+import React, { useState } from "react";
 import Chart from "../graphics/Chart";
-import { useState } from "react";
 
 function MonoGraphContainer({ title, data }) {
   const [graphType, setGraphType] = useState("pie");

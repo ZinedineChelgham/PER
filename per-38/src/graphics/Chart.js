@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from "react";
-import * as d3 from "d3";
-import PieChart from "./PieChart";
+import React from "react";
 import BarPlot from "./BarPlot";
+import PieChart from "./PieChart";
 
 const Chart = ({
   type,

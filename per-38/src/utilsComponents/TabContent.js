@@ -1,16 +1,15 @@
 import React from "react";
-import { Typography } from "@mui/material";
 import Administrative from "../pagesComponents/Administrative";
-import Enseignement from "../pagesComponents/Enseignement";
-import Recherche from "../pagesComponents/Recherche";
 import Cadre from "../pagesComponents/Cadre";
-import Presentation from "../pagesComponents/Presentation";
 import Carte from "../pagesComponents/Carte";
+import Enseignement from "../pagesComponents/Enseignement";
+import Presentation from "../pagesComponents/Presentation";
+import Recherche from "../pagesComponents/Recherche";
 
 const TabContent = ({ tabKey, handleTabChange }) => {
   switch (tabKey) {
     case "presentation":
-      return <Presentation handleTabChange={handleTabChange}/>;
+      return <Presentation handleTabChange={handleTabChange} />;
     case "cadre":
       return <Cadre />;
     case "enseignement":
