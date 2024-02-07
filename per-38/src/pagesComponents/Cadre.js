@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
 import Carousel from "react-material-ui-carousel";
-import { GraphDataMapper } from "../graphics/GraphExporter";
+import { GraphDataMapper } from "../graphics/GraphDataMapper";
 import Chart from "../graphics/Chart";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import Grid from "@mui/material/Grid";

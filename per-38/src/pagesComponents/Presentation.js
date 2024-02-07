@@ -5,7 +5,7 @@ import map from "../assets/images/map.png";
 import { carousselItems } from "../utils/carousselItemExporter";
 import Carousel from "react-material-ui-carousel";
 import Box from "@mui/material/Box";
-import { GraphDataMapper } from "../graphics/GraphExporter";
+import { GraphDataMapper } from "../graphics/GraphDataMapper";
 import Chart from "../graphics/Chart";
 import Tooltip from "@mui/material/Tooltip";
 
