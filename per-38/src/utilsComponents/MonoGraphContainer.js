@@ -16,51 +16,49 @@ function MonoGraphContainer({ title, data }) {
   };
 
   return (
-    <div>
-      <Grid
-        container
-        justifyContent="center"
-        spacing={2}
-        sx={{ marginBottom: 4 }}
-      >
-        <Grid item xs={12}>
-          <Chart type={graphType} title={title} data={data} />
-        </Grid>
-
-        <Grid item>
-          <IconButton
-            aria-label="delete"
-            size="large"
-            onClick={() => handleIconClick("pie")}
-          >
-            <PieChartIcon
-              style={{
-                fontSize: "inherit",
-                width: "100px",
-                height: "100px",
-                backgroundColor: graphType === "pie" ? "lightgrey" : "white",
-              }}
-            />
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <IconButton
-            aria-label="delete"
-            size="large"
-            onClick={() => handleIconClick("bar")}
-          >
-            <BarChartIcon
-              style={{
-                fontSize: "inherit",
-                width: "100px",
-                height: "100px",
-                backgroundColor: graphType === "bar" ? "lightgrey" : "white",
-              }}
-            />
-          </IconButton>
-        </Grid>
+    <Grid
+      container
+      justifyContent="center"
+      spacing={2}
+      sx={{ marginBottom: 4 }}
+    >
+      <Grid item xs={12}>
+        <Chart type={graphType} title={title} data={data} />
       </Grid>
-    </div>
+
+      <Grid item>
+        <IconButton
+          aria-label="delete"
+          size="large"
+          onClick={() => handleIconClick("pie")}
+        >
+          <PieChartIcon
+            style={{
+              fontSize: "inherit",
+              width: "100px",
+              height: "100px",
+              backgroundColor: graphType === "pie" ? "lightgrey" : "white",
+            }}
+          />
+        </IconButton>
+      </Grid>
+      <Grid item>
+        <IconButton
+          aria-label="delete"
+          size="large"
+          onClick={() => handleIconClick("bar")}
+        >
+          <BarChartIcon
+            style={{
+              fontSize: "inherit",
+              width: "100px",
+              height: "100px",
+              backgroundColor: graphType === "bar" ? "lightgrey" : "white",
+            }}
+          />
+        </IconButton>
+      </Grid>
+    </Grid>
   );
 }
 
