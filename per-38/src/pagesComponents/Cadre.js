@@ -5,6 +5,7 @@ import Carousel from "react-material-ui-carousel";
 import { GraphDataMapper } from "../graphics/GraphExporter";
 import Chart from "../graphics/Chart";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
+import AcademicProgressChart from "../graphics/AcademicProgressChart";
 
 function Cadre() {
   const [value, setValue] = useState(0);
@@ -41,7 +42,7 @@ function Cadre() {
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography>Contenu de l'onglet Multicritère</Typography>
+          <AcademicProgressChart></AcademicProgressChart>
       </TabPanel>
     </Box>
   );

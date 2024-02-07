@@ -9,7 +9,7 @@ const LineGraphComponent = () => {
         pu: {
             title: 'PU Hommes et Femmes par année',
             data: [
-                { gender: 'Homme', values: [0, 15, 55, 81] },
+                { gender: 'Homme', values: [3, 6, 55, 81] },
                 { gender: 'Femme', values: [0, 0, 15, 42] },
             ],
             color: ['#1f77b4', '#ff7f0e']
@@ -32,7 +32,7 @@ const LineGraphComponent = () => {
         },
     };
 
-    const years = [5, 10, 15, 20]; // common x-axis years
+    const years = [5, 10, 15, 20];
 
     useEffect(() => {
         const margin = { top: 50, right: 300, bottom: 100, left: 40 }, // Increase right margin
@@ -49,7 +49,7 @@ const LineGraphComponent = () => {
 
 
         const xScale = d3.scaleLinear()
-            .domain([0, 20])
+            .domain([4, 20])
             .range([0, width]);
 
         const yScale = d3.scaleLinear()
@@ -78,7 +78,7 @@ const LineGraphComponent = () => {
                 .attr("class", "line") // Make sure this class is not styled with a fill in CSS
                 .attr("fill", "none") // Explicitly set fill to none
                 .attr("stroke", currentData.color[i])
-                .attr("stroke-width", 2)
+                .attr("stroke-width", 4)
                 .attr("d", line);
         });
 
@@ -86,33 +86,34 @@ const LineGraphComponent = () => {
             .attr("x", width / 2)
             .attr("y", -margin.top / 2)
             .attr("text-anchor", "middle")
-            .style("font-size", "16px")
+            .style("font-size", "20px")
             .style("font-weight", "bold")
             .text(currentData.title);
 
         // Create the checkbox container
         const checkboxContainer = svg.append("foreignObject")
-            .attr("x", width) // Position at the end of the graph
-            .attr("y", margin.top)
-            .attr("width", margin.right) // Width of the margin reserved for checkboxes
-            .attr("height", Object.keys(graphData).length * 30)
+            .attr("x", 1120) // Position at the end of the graph
+            .attr("y", 100)
+            .attr("width", 250) // Width of the margin reserved for checkboxes
+            .attr("height", 1000)
             .append("xhtml:div")
             .style("display", "flex")
             .style("flex-direction", "column")
-            .style("font-size", "12px")
+            .style("font-size", "16px")
             .style("align-items", "start")
             .style("padding", "10px");
 
         // Create checkboxes
         Object.keys(graphData).forEach((key) => {
-            let container = checkboxContainer.append("xhtml:div");
+            let container = checkboxContainer.append("xhtml:div")
+                .style("margin-bottom", "5px"); // Add margin between checkboxes
             container.append("xhtml:input")
                 .attr("type", "radio")
                 .attr("name", "graph-type")
                 .attr("id", key)
                 .attr("value", key)
                 .property("checked", selectedGraph === key)
-                .on("change", function() {
+                .on("change", function () {
                     setSelectedGraph(this.value);
                     // Call function to update graph based on selection
                 });
@@ -123,11 +124,10 @@ const LineGraphComponent = () => {
 
         // Style the checkbox container
         checkboxContainer
-            .style("display", "flex")
-            .style("flex-direction", "column")
-            // ...continue styling the checkbox container
-            .style("align-items", "start")
-            .style("padding", "10px");
+            .style("border", "1px solid #ccc") // Add a border for separation
+            .style("border-radius", "5px") // Add border-radius for rounded corners
+            .style("padding", "10px")
+            .style("margin-top", "10px");
 
         // Add the legend
         const legend = d3.select(svgRef.current).selectAll(".legend")
@@ -137,14 +137,16 @@ const LineGraphComponent = () => {
             .attr("transform", (d, i) => `translate(${width - margin.right + 20}, ${i * 20 + 30})`);
 
         legend.append("rect")
-            .attr("x", 0)
+            .attr("x", 350)
+            .attr("y", 293)
+
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", (d, i) => currentData.color[i]);
 
         legend.append("text")
-            .attr("x", 15)
-            .attr("y", 10)
+            .attr("x", 365)
+            .attr("y", 300)
             .text((d) => d.gender)
             .style("text-anchor", "start")
             .style("alignment-baseline", "middle");
