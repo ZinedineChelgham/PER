@@ -6,6 +6,9 @@ import { GraphDataMapper } from "../graphics/GraphDataMapper";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import TabPanel from "../utilsComponents/TabPanel";
 
+import AcademicProgressChart from "../graphics/AcademicProgressChart";
+
+
 function Cadre() {
   const [value, setValue] = useState(0);
   const [checkedGraph, setCheckedGraph] = useState({}); // State to keep track of checked graphs
@@ -80,7 +83,7 @@ function Cadre() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography>Contenu de l'onglet Multicritère</Typography>
+          <AcademicProgressChart></AcademicProgressChart>
       </TabPanel>
     </Box>
   );
