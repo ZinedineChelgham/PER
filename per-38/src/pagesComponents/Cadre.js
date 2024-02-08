@@ -7,6 +7,7 @@ import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import TabPanel from "../utilsComponents/TabPanel";
 
 import AcademicProgressChart from "../graphics/AcademicProgressChart";
+import BarPlot1 from "../graphics/mult";
 
 
 function Cadre() {
@@ -83,7 +84,7 @@ function Cadre() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-          <AcademicProgressChart></AcademicProgressChart>
+          <BarPlot1></BarPlot1>
       </TabPanel>
     </Box>
   );
