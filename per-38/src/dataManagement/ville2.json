@@ -1,0 +1,533 @@
+{
+    "56000": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "nice": {
+        "respondantCount": 27,
+        "femaleCount": 9,
+        "maleCount": 18,
+        "otherCount": 0
+    },
+    "toulouse": {
+        "respondantCount": 42,
+        "femaleCount": 23,
+        "maleCount": 19,
+        "otherCount": 0
+    },
+    "saclay": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "marseille": {
+        "respondantCount": 16,
+        "femaleCount": 1,
+        "maleCount": 15,
+        "otherCount": 0
+    },
+    "paris": {
+        "respondantCount": 68,
+        "femaleCount": 25,
+        "maleCount": 43,
+        "otherCount": 0
+    },
+    "clermont ferrand": {
+        "respondantCount": 11,
+        "femaleCount": 4,
+        "maleCount": 7,
+        "otherCount": 0
+    },
+    "rennes": {
+        "respondantCount": 29,
+        "femaleCount": 8,
+        "maleCount": 21,
+        "otherCount": 0
+    },
+    "lille": {
+        "respondantCount": 27,
+        "femaleCount": 7,
+        "maleCount": 20,
+        "otherCount": 0
+    },
+    "orléans": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0
+    },
+    "caen": {
+        "respondantCount": 14,
+        "femaleCount": 2,
+        "maleCount": 12,
+        "otherCount": 0
+    },
+    "tours": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0
+    },
+    "nantes": {
+        "respondantCount": 30,
+        "femaleCount": 9,
+        "maleCount": 21,
+        "otherCount": 0
+    },
+    "bidart": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "strasbourg": {
+        "respondantCount": 15,
+        "femaleCount": 4,
+        "maleCount": 11,
+        "otherCount": 0
+    },
+    "troyes": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "grenoble": {
+        "respondantCount": 21,
+        "femaleCount": 11,
+        "maleCount": 10,
+        "otherCount": 0
+    },
+    "mulhouse": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+    "bordeaux": {
+        "respondantCount": 16,
+        "femaleCount": 4,
+        "maleCount": 12,
+        "otherCount": 0
+    },
+    "lyon": {
+        "respondantCount": 20,
+        "femaleCount": 7,
+        "maleCount": 13,
+        "otherCount": 0
+    },
+    "evry": {
+        "respondantCount": 6,
+        "femaleCount": 1,
+        "maleCount": 5,
+        "otherCount": 0
+    },
+    "nancy": {
+        "respondantCount": 21,
+        "femaleCount": 3,
+        "maleCount": 18,
+        "otherCount": 0
+    },
+    "valdivia (chili)": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "talence": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "villetaneuse": {
+        "respondantCount": 5,
+        "femaleCount": 1,
+        "maleCount": 4,
+        "otherCount": 0
+    },
+    "bourges": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "brest": {
+        "respondantCount": 10,
+        "femaleCount": 1,
+        "maleCount": 9,
+        "otherCount": 0
+    },
+    "nanterre": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "laval": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "créteil": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+    "province": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "st denis": {
+        "respondantCount": 4,
+        "femaleCount": 0,
+        "maleCount": 4,
+        "otherCount": 0
+    },
+    "annecy": {
+        "respondantCount": 7,
+        "femaleCount": 2,
+        "maleCount": 5,
+        "otherCount": 0
+    },
+    "chambéry": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "avignon": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "poitiers": {
+        "respondantCount": 17,
+        "femaleCount": 2,
+        "maleCount": 15,
+        "otherCount": 0
+    },
+    "le havre": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "orsay": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0
+    },
+
+    "montluçon": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "montpellier": {
+        "respondantCount": 15,
+        "femaleCount": 7,
+        "maleCount": 8,
+        "otherCount": 0
+    },
+    "la rochelle": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "toulon": {
+        "respondantCount": 5,
+        "femaleCount": 0,
+        "maleCount": 5,
+        "otherCount": 0
+    },
+
+    "courbevoie": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "besançon": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+    "palaiseau": {
+        "respondantCount": 4,
+        "femaleCount": 0,
+        "maleCount": 4,
+        "otherCount": 0
+    },
+
+    "lorient": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "vannes": {
+        "respondantCount": 3,
+        "femaleCount": 2,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "perpignan": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "schiltigheim": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "le puy en velay": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "villeneuve d'ascq": {
+        "respondantCount": 4,
+        "femaleCount": 1,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+    "anglet": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+
+
+    "rouen": {
+        "respondantCount": 4,
+        "femaleCount": 1,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+ 
+    "reims": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+    "aix": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "nouméa": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "marne-la-vallée": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "champs sur marne": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "bron": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "dijon": {
+        "respondantCount": 5,
+        "femaleCount": 2,
+        "maleCount": 3,
+        "otherCount": 0
+    },
+
+
+    "versailles": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "amiens": {
+        "respondantCount": 3,
+        "femaleCount": 2,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "lens": {
+        "respondantCount": 4,
+        "femaleCount": 2,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "chambery": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "valenciennes": {
+        "respondantCount": 5,
+        "femaleCount": 1,
+        "maleCount": 4,
+        "otherCount": 0
+    },
+    "angers": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "chasseneuil du poitou": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "valence": {
+        "respondantCount": 4,
+        "femaleCount": 2,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "villeurbanne": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "st etienne": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "corte": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "blagnac": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "montpelllier": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "béziers": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "le mans": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "metz": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "limoges": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "colmar": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "gif sur yvette": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "belfort": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0
+    },
+    "versailles saint quentin en yvelines": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "creteil": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "montreal": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+
+    "salon de provence": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    },
+    "cergy": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0
+    },
+    "cambrai": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0
+    }
+}

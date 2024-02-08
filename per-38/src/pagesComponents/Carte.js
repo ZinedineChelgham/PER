@@ -1,6 +1,6 @@
 import React from "react";
 import FranceMap from "../mapManagement/map";
-import data from "../mapManagement/updated_cities.json";
+import data from "../mapManagement/updated_cities3.json";
 import { Typography } from "@mui/material";
 
 function Carte() {

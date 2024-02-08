@@ -18,26 +18,39 @@ def transform_answers(answers):
 # Transform each respondent's data
 transformed_data = [transform_answers(resp) for resp in respondents_data]
 
-# Convert the transformed data back to JSON (or use it as a Python dict)
-transformed_json = json.dumps(transformed_data, indent=4)
+# Initialize dictionaries to store counts for each city
+city_counts = {}
 
-#write the data to a json file
-# with open('transformed.json', 'w') as file:
-#     file.write(transformed_json)
+# Iterate over transformed data to count respondents and their genders for each city
+for respondent in transformed_data:
+    city = respondent.get('Ville')
+    gender = respondent.get('1 - Vous êtes ?')
 
-# make another json file for each "Ville" with its count from the transformed data 
-# and write it to a json file
-ville = {}
-for i in transformed_data:
-    if i['Ville'] in ville:
-        ville[i['Ville']] += 1
+    # Skip respondents without a city or gender
+    if not city or not gender:
+        continue
+
+    # Normalize city name to lowercase
+    city = city.lower()
+
+    # Initialize counts for the city if not already present
+    if city not in city_counts:
+        city_counts[city] = {'respondantCount': 0, 'femaleCount': 0, 'maleCount': 0, 'otherCount': 0}
+
+    # Increment total respondent count for the city
+    city_counts[city]['respondantCount'] += 1
+
+    # Increment gender-specific counts
+    if gender == 'Un homme':
+        city_counts[city]['maleCount'] += 1
+    elif gender == 'Une femme':
+        city_counts[city]['femaleCount'] += 1
     else:
-        ville[i['Ville']] = 1
-ville_json = json.dumps(ville, indent=4)
-with open('ville.json', 'w') as file:
-    file.write(ville_json)
+        city_counts[city]['otherCount'] += 1
 
+# Convert the city counts to JSON
+city_counts_json = json.dumps(city_counts, indent=4)
 
-
-
-
+# Write the city counts to a JSON file
+with open('ville3.json', 'w') as file:
+    file.write(city_counts_json)
