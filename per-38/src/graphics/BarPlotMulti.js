@@ -28,6 +28,15 @@ const BarPlot1 = ({ data }) => {
             .rangeRound([height, 0]);
         const g = svg.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+        svg
+            .append("text") // Add x-axis title
+            .attr("x", width / 2 + margin.left) // Adjust the x position based on your preference
+            .attr("y", height + margin.top + 40) // Adjust the y position based on your preference
+            .style("text-anchor", "middle")
+            .style("font-size", "14px")
+            .text("Nombre d'heures complémentaires");
         g.append("text") // Adding title above the chart
             .attr("x", width / 2)
             .attr("y", -30)
@@ -102,7 +111,7 @@ const BarPlot1 = ({ data }) => {
             .attr('height', 100)
             .append('xhtml:div');
 
-        ['Overall', 'Genre', 'Statut'].forEach((option, i) => {
+        ['Overall', 'Sexe', 'Statut'].forEach((option, i) => {
             const id = `checkbox-${option}`;
             const checkboxGroup = svg.append('foreignObject')
                 .attr('x', width + margin.left + 100)
@@ -111,7 +120,7 @@ const BarPlot1 = ({ data }) => {
                 .attr('height', 100)
                 .append('xhtml:div');
 
-            ['Overall', 'Genre', 'Statut'].forEach((option, i) => {
+            ['Overall', 'Sexe', 'Statut'].forEach((option, i) => {
                 const id = `checkbox-${option}`;
                 checkboxGroup.append('xhtml:input')
                     .attr('type', 'radio')

@@ -16,7 +16,7 @@ function Enseignement() {
             '121-150': 73,
             'bcp plus !': 67
         },
-        Genre: {
+        Sexe: {
             'Un homme': {
                 '<50': 125,
                 '51-80': 97,
@@ -53,6 +53,13 @@ function Enseignement() {
                 '81-120': 18,
                 '121-150': 8,
                 'bcp plus !': 19
+            },
+            'Autre statut': {
+                '<50': 1,
+                '51-80': 1,
+                '81-120': 2,
+                '121-150': 2,
+                'bcp plus !': 0
             }
         }
     };
