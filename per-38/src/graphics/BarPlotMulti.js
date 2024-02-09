@@ -1,58 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-const BarPlot1 = () => {
+const BarPlot1 = ({ data }) => {
     const [selectedOption, setSelectedOption] = useState('Overall');
     const svgRef = useRef();
-    const data = {
-        Overall: {
-            '<50': 177,
-            '51-80': 131,
-            '81-120': 122,
-            '121-150': 73,
-            'bcp plus !': 67
-        },
-        Genre: {
-            'Un homme': {
-                '<50': 125,
-                '51-80': 97,
-                '81-120': 97,
-                '121-150': 55,
-                'bcp plus !': 48
-            },
-            'Une femme': {
-                '<50': 52,
-                '51-80': 34,
-                '81-120': 25,
-                '121-150': 18,
-                'bcp plus !': 19
-            }
-        },
-        Statut: {
-            'Professeur des Universités': {
-                '<50': 74,
-                '51-80': 55,
-                '81-120': 40,
-                '121-150': 20,
-                'bcp plus !': 13
-            },
-            'Maître de Conférences (sans HDR)': {
-                '<50': 69,
-                '51-80': 60,
-                '81-120': 62,
-                '121-150': 43,
-                'bcp plus !': 35
-            },
-            'Maître de Conférences (avec HDR)': {
-                '<50': 33,
-                '51-80': 15,
-                '81-120': 18,
-                '121-150': 8,
-                'bcp plus !': 19
-            }
-        }
-    };
-    const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
 
+    const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
     useEffect(() => {
         const margin = { top: 50, right: 300, bottom: 70, left: 40 }, // Increase right margin
             width = 1402 - margin.left - margin.right, // Decrease width to create space for checkboxes

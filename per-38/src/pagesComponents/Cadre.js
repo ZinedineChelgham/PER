@@ -7,7 +7,7 @@ import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import TabPanel from "../utilsComponents/TabPanel";
 
 import AcademicProgressChart from "../graphics/AcademicProgressChart";
-import BarPlot1 from "../graphics/mult";
+import BarPlot1 from "../graphics/BarPlotMulti";
 
 
 function Cadre() {
