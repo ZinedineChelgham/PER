@@ -62,6 +62,14 @@ const LineGraphComponent = () => {
       .append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(xScale));
+    svg
+        .append("text") // Add x-axis title
+        .attr("x", width / 2 + margin.left) // Adjust the x position based on your preference
+        .attr("y", height + margin.top + 40) // Adjust the y position based on your preference
+        .style("text-anchor", "middle")
+        .style("font-size", "18px")
+        .text("Nombres d'années depuis le premier poste"); // Set the x-axis title text
+
 
     chart.append("g").call(d3.axisLeft(yScale));
 

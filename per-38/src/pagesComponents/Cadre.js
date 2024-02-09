@@ -84,7 +84,7 @@ function Cadre() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-          <BarPlot1></BarPlot1>
+          <AcademicProgressChart></AcademicProgressChart>
       </TabPanel>
     </Box>
   );

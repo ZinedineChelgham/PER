@@ -92,8 +92,8 @@ const BarPlot1 = () => {
                 .data(Object.entries(plotData))
                 .enter().append("rect")
                 .attr("class", "bar")
-                .attr("x", function(d) { return x0(d[0]); })
-                .attr("width", x0.bandwidth())
+                .attr("x", function(d) { return x0(d[0]) + x0.bandwidth() / 4; })
+                .attr("width", x0.bandwidth() / 2)  // Adjust the division factor to make it smaller
                 .attr("y", function(d) { return y(d[1]); })
                 .attr("height", function(d) { return height - y(d[1]); })
                 .attr("fill", color(0));

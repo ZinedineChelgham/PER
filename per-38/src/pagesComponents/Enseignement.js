@@ -4,6 +4,7 @@ import TabPanel from "../utilsComponents/TabPanel";
 import { GraphDataMapper } from "../graphics/GraphDataMapper";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import Grid from "@mui/material/Grid";
+import BarPlot1 from "../graphics/mult";
 
 function Enseignement() {
   const [value, setValue] = useState(0);
@@ -80,7 +81,7 @@ function Enseignement() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography>Contenu de l'onglet Multicritère</Typography>
+          <BarPlot1></BarPlot1>
       </TabPanel>
     </Box>
   );
