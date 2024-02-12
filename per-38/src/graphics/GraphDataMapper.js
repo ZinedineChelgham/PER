@@ -2,21 +2,21 @@ export const GraphDataMapper = {
   cadre: [
     {
       data: [
-        { category: "Pas du tout", percentage: 5.59 },
-        { category: "Plutôt pas", percentage: 7.49 },
+        { category: "Tout à fait", percentage: 5.59 },
+        { category: "Un peu", percentage: 7.49 },
         { category: "Moyennement", percentage: 18.12 },
-        { category: "Un peu", percentage: 35.01 },
-        { category: "Tout à fait", percentage: 33.24 },
+        { category: "Plutôt pas", percentage: 35.01 },
+        { category: "Pas du tout", percentage: 33.24 },
       ],
       title: "Métier toujours intéressant?",
     },
     {
       data: [
-        { category: "Pas du tout", percentage: 37.64 },
-        { category: "Plutôt pas", percentage: 34.07 },
+        { category: "Tout à fait", percentage: 37.64 },
+        { category: "Un peu", percentage: 34.07 },
         { category: "Moyennement", percentage: 19.78 },
-        { category: "Un peu", percentage: 5.22 },
-        { category: "Tout à fait", percentage: 3.3 },
+        { category: "Plutôt pas", percentage: 5.22 },
+        { category: "Pas du tout", percentage: 3.3 },
       ],
       title: "Métier toujours attirant?",
     },
