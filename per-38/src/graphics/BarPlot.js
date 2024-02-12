@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
+import React, { useEffect, useRef } from "react";
 
 const BarPlot = ({ data, title }) => {
   const ref = useRef();
@@ -51,7 +51,9 @@ const BarPlot = ({ data, title }) => {
         "height",
         (d) => height - margin.top - margin.bottom - y(d.percentage)
       )
-      .attr("fill", "#69b3a2"); // Adjust bar color if needed
+      .attr("fill", "#69b3a2") // Adjust bar color if needed
+      .append("title") // Append title element for tooltip
+      .text((d) => `${d.percentage}%`);
 
     svg
       .append("text")

@@ -42,7 +42,9 @@ const PieChart = ({ data, title }) => {
       .attr("d", arc)
       .attr("fill", (d, i) => color(i))
       .attr("stroke", "white")
-      .attr("stroke-width", "2px");
+      .attr("stroke-width", "2px")
+      .append("title") // Append title element for tooltip
+      .text((d) => `${d.data.percentage}%`);
 
     // Add title to the chart
     svg
