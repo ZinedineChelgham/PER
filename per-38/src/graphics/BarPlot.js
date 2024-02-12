@@ -36,7 +36,8 @@ const BarPlot = ({ data, title }) => {
       .style("text-anchor", "end")
       .attr("transform", "rotate(-45)");
 
-    svg.append("g").call(d3.axisLeft(y));
+    // Append "%" to the y-axis tick values
+    svg.append("g").call(d3.axisLeft(y).tickFormat((d) => `${d}%`));
 
     svg
       .selectAll(".bar")
