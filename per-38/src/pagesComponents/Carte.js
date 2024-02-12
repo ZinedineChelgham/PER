@@ -1,13 +1,13 @@
+import { Typography } from "@mui/material";
 import React from "react";
 import FranceMap from "../mapManagement/map";
 import data from "../mapManagement/updated_cities3.json";
-import { Typography } from "@mui/material";
 
 function Carte() {
   return (
     <div>
       <Typography variant="h4" textAlign={"center"}>
-        Responses per University in France
+        Réponse des différentes universités en france
       </Typography>
       <FranceMap data={data.cities} />
     </div>
