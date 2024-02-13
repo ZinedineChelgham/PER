@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 const BarPlot1 = ({ data }) => {
     const [selectedOption, setSelectedOption] = useState('Overall');
     const svgRef = useRef();
-
     const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
     useEffect(() => {
         const margin = { top: 50, right: 300, bottom: 70, left: 40 }, // Increase right margin
@@ -23,6 +22,8 @@ const BarPlot1 = ({ data }) => {
             .rangeRound([0, width])
             .paddingInner(0.1);
         const x1 = d3.scaleBand()
+            .padding(0.05);
+        const x2 = d3.scaleBand()
             .padding(0.05);
         const y = d3.scaleLinear()
             .rangeRound([height, 0]);
@@ -44,85 +45,218 @@ const BarPlot1 = ({ data }) => {
             .style("font-size", "24px")
             .style("font-weight", "bold")
             .text(`Nombre d'heures complémentaires en moyenne ces deux dernières années`);
-        let plotData = data[selectedOption];
-        let keys = Object.keys(plotData);
-        if (selectedOption === 'Overall') {
-            x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
-            y.domain([0, d3.max(Object.values(plotData))]).nice();
-            g.selectAll(".bar")
-                .data(Object.entries(plotData))
-                .enter().append("rect")
-                .attr("class", "bar")
-                .attr("x", function(d) { return x0(d[0]) + x0.bandwidth() / 4; })
-                .attr("width", x0.bandwidth() / 2)  // Adjust the division factor to make it smaller
-                .attr("y", function(d) { return y(d[1]); })
-                .attr("height", function(d) { return height - y(d[1]); })
-                .attr("fill", color(0));
-        } else {
-            x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
-            x1.domain(keys).rangeRound([0, x0.bandwidth()]);
-            y.domain([0, d3.max(keys, function(key) { return d3.max(Object.values(plotData[key])); })]).nice();
-            let bar = g.append("g")
+        if (selectedOption === 'Sexe_Statut') {
+            let plotData_homme_femme = data['Sexe_Statut'];
+            let statuts = Object.keys(plotData_homme_femme);
+            let categories = ['<50', '51-80', '81-120', '121-150', 'bcp plus !'];
+            let sexes = ['Un homme', 'Une femme'];
+
+            x0.domain(statuts);
+            x1.domain(categories).rangeRound([0, x0.bandwidth()]);
+            x2.domain(sexes).rangeRound([0, x1.bandwidth()]);
+            y.domain([0, d3.max(statuts, function(statut) {
+                return d3.max(categories, function(category) {
+                    return d3.max(sexes, function(sex) {
+                        return plotData_homme_femme[statut][sex][category];
+                    });
+                });
+            })]).nice();
+
+            let statutBar = g.append("g")
                 .selectAll("g")
-                .data(['<50', '51-80', '81-120', '121-150', 'bcp plus !'])
+                .data(statuts)
                 .enter().append("g")
-                .attr("transform", function(d) { return "translate(" + x0(d) + ",0)"; });
-            bar.selectAll("rect")
-                .data(function(d) { return keys.map(function(key) { return {key: key, value: plotData[key][d]}; }); })
+                .attr("transform", function (d) {
+                    return "translate(" + x0(d) + ",0)";
+                });
+
+            let categoryBar = statutBar.selectAll("g")
+                .data(function (d) {
+                    return categories.map(function (category) {
+                        return { category: category, values: sexes.map(function(sex) {
+                                return { sex: sex, value: plotData_homme_femme[d][sex][category] };
+                            })};
+                    });
+                })
+                .enter().append("g")
+                .attr("transform", function (d) {
+                    return "translate(" + x1(d.category) + ",0)";
+                });
+
+            categoryBar.selectAll("rect")
+                .data(function (d) {
+                    return d.values;
+                })
                 .enter().append("rect")
-                .attr("x", function(d) { return x1(d.key); })
-                .attr("y", function(d) { return y(d.value); })
-                .attr("width", x1.bandwidth())
-                .attr("height", function(d) { return height - y(d.value); })
-                .attr("fill", function(d) { return color(d.key); });
-        }
-        g.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x0));
-        g.append("g")
-            .call(d3.axisLeft(y));
-        let legendKeys = selectedOption === 'Overall' ? ['Overall'] : keys;
-        if (selectedOption !== 'Overall') {
+                .attr("x", function (d) {
+                    return x2(d.sex);
+                })
+                .attr("y", function (d) {
+                    return y(d.value);
+                })
+                .attr("width", x2.bandwidth())
+                .attr("height", function (d) {
+                    return height - y(d.value);
+                })
+                .attr("fill", function (d) {
+                    return color(d.sex);
+                });
+
+            // Append X and Y axes for Sexe_Statut
+            g.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x0));
+
+            g.append("g")
+                .call(d3.axisLeft(y));
+            // Define color and legendKeys here
+            let color1 = d3.scaleOrdinal()
+                .domain(['Professeur des Universités', 'Maître de Conférences (sans HDR)', 'Maître de Conférences (avec HDR)', 'Un homme', 'Une femme'])
+                .range([ '#d62728', '#9467bd']);  // Add your desired colors here
+
+            let legendKeys = [ 'Un homme', 'Une femme'];
+
+// ... rest of your code ...
+
             let legend = g.append("g")
                 .attr("font-family", "sans-serif")
-                .attr("font-size", 15)
+                .attr("font-size", 10)
                 .attr("text-anchor", "end")
                 .selectAll("g")
-                .data(legendKeys)
+                .data(legendKeys.slice().reverse())
                 .enter().append("g")
                 .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
             legend.append("rect")
-                .attr("x", width - 19)
-                .attr("width", 19)
-                .attr("height", 19)
+                .attr("x", width - 18)
+                .attr("width", 18)
+                .attr("height", 18)
                 .attr("fill", color);
 
             legend.append("text")
                 .attr("x", width - 24)
-                .attr("y", 9.5)
-                .attr("dy", "0.32em")
+                .attr("y", 9)
+                .attr("dy", "0.35em")
                 .text(function(d) { return d; });
+
+
         }
-        const checkboxGroup = svg.append('foreignObject')
+
+
+
+
+        else {
+            let plotData = data[selectedOption];
+            let keys = Object.keys(plotData);
+            if (selectedOption === 'Overall') {
+                x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
+                y.domain([0, d3.max(Object.values(plotData))]).nice();
+                g.selectAll(".bar")
+                    .data(Object.entries(plotData))
+                    .enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) {
+                        return x0(d[0]) + x0.bandwidth() / 4;
+                    })
+                    .attr("width", x0.bandwidth() / 2)  // Adjust the division factor to make it smaller
+                    .attr("y", function (d) {
+                        return y(d[1]);
+                    })
+                    .attr("height", function (d) {
+                        return height - y(d[1]);
+                    })
+                    .attr("fill", color(0));
+
+            } else {
+                x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
+                x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+                y.domain([0, d3.max(keys, function (key) {
+                    return d3.max(Object.values(plotData[key]));
+                })]).nice();
+                let bar = g.append("g")
+                    .selectAll("g")
+                    .data(['<50', '51-80', '81-120', '121-150', 'bcp plus !'])
+                    .enter().append("g")
+                    .attr("transform", function (d) {
+                        return "translate(" + x0(d) + ",0)";
+                    });
+                bar.selectAll("rect")
+                    .data(function (d) {
+                        return keys.map(function (key) {
+                            return {key: key, value: plotData[key][d]};
+                        });
+                    })
+                    .enter().append("rect")
+                    .attr("x", function (d) {
+                        return x1(d.key);
+                    })
+                    .attr("y", function (d) {
+                        return y(d.value);
+                    })
+                    .attr("width", x1.bandwidth())
+                    .attr("height", function (d) {
+                        return height - y(d.value);
+                    })
+                    .attr("fill", function (d) {
+                        return color(d.key);
+                    });
+
+
+            }
+
+            g.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x0));
+            g.append("g")
+                .call(d3.axisLeft(y));
+            let legendKeys = selectedOption === 'Overall' ? ['Overall'] : keys;
+            if (selectedOption !== 'Overall') {
+                let legend = g.append("g")
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", 15)
+                    .attr("text-anchor", "end")
+                    .selectAll("g")
+                    .data(legendKeys)
+                    .enter().append("g")
+                    .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+                legend.append("rect")
+                    .attr("x", width - 19)
+                    .attr("width", 19)
+                    .attr("height", 19)
+                    .attr("fill", color);
+
+                legend.append("text")
+                    .attr("x", width - 24)
+                    .attr("y", 9.5)
+                    .attr("dy", "0.32em")
+                    .text(function(d) { return d; });
+
+
+        }}
+
+        const checkboxGroup = svg
+            .append('foreignObject')
             .attr('x', width + margin.left)
             .attr('y', margin.top)
             .attr('width', 200)
             .attr('height', 100)
             .append('xhtml:div');
 
-        ['Overall', 'Sexe', 'Statut'].forEach((option, i) => {
+        ['Overall', 'Sexe', 'Statut', 'Sexe_Statut'].forEach((option) => {
             const id = `checkbox-${option}`;
-            const checkboxGroup = svg.append('foreignObject')
+            const checkboxGroup = svg
+                .append('foreignObject')
                 .attr('x', width + margin.left + 100)
-                .attr('y', margin.top+120)
+                .attr('y', margin.top + 120)
                 .attr('width', 200)
                 .attr('height', 100)
                 .append('xhtml:div');
 
-            ['Overall', 'Sexe', 'Statut'].forEach((option, i) => {
+            ['Overall', 'Sexe', 'Statut', 'Sexe_Statut'].forEach((option) => {
                 const id = `checkbox-${option}`;
-                checkboxGroup.append('xhtml:input')
+                checkboxGroup
+                    .append('xhtml:input')
                     .attr('type', 'radio')
                     .attr('id', id)
                     .attr('name', 'option')
@@ -130,7 +264,8 @@ const BarPlot1 = ({ data }) => {
                     .property('checked', selectedOption === option)
                     .on('change', () => setSelectedOption(option))
                     .style('margin-right', '5px');
-                checkboxGroup.append('xhtml:label')
+                checkboxGroup
+                    .append('xhtml:label')
                     .attr('for', id)
                     .text(option)
                     .style('font-size', '16px')
@@ -138,15 +273,9 @@ const BarPlot1 = ({ data }) => {
                 checkboxGroup.append('xhtml:br');
             });
         });
-
-
     }, [selectedOption]);
 
-    return (
-
-            <svg ref={svgRef} ></svg>
-
-    );
+    return <svg ref={svgRef}></svg>;
 };
 
 export default BarPlot1;

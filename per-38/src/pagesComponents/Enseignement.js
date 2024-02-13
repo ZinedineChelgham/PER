@@ -54,17 +54,60 @@ function Enseignement() {
                 '121-150': 8,
                 'bcp plus !': 19
             },
-            'Autre statut': {
-                '<50': 1,
-                '51-80': 1,
-                '81-120': 2,
-                '121-150': 2,
-                'bcp plus !': 0
-            }
+        },
+        Sexe_Statut: {
+            'Professeur des Universités': {
+                'Un homme': {
+                    '<50': 54,
+                    '51-80': 42,
+                    '81-120': 34,
+                    '121-150': 11,
+                    'bcp plus !': 8
+                },
+                'Une femme': {
+                    '<50': 20,
+                    '51-80': 13,
+                    '81-120': 6,
+                    '121-150': 9,
+                    'bcp plus !': 5
+                }
+            },
+            'Maître de Conférences (sans HDR)': {
+                'Un homme': {
+                    '<50': 52,
+                    '51-80': 43,
+                    '81-120': 47,
+                    '121-150': 35,
+                    'bcp plus !': 29
+                },
+                'Une femme': {
+                    '<50': 17,
+                    '51-80': 17,
+                    '81-120': 15,
+                    '121-150': 8,
+                    'bcp plus !': 6
+                }
+            },
+            'Maître de Conférences (avec HDR)': {
+                'Un homme': {
+                    '<50': 18,
+                    '51-80': 11,
+                    '81-120': 14,
+                    '121-150': 7,
+                    'bcp plus !': 11
+                },
+                'Une femme': {
+                    '<50': 15,
+                    '51-80': 4,
+                    '81-120': 4,
+                    '121-150': 1,
+                    'bcp plus !': 8
+                }
+            },
         }
     };
 
-  const enseignementData = GraphDataMapper.enseignement;
+    const enseignementData = GraphDataMapper.enseignement;
 
   const [checkedGraph, setCheckedGraph] = useState({}); // State to keep track of checked graphs
 
@@ -136,6 +179,7 @@ function Enseignement() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
+          <p>dkeozdzedzed</p>
           <BarPlot1 data={data}></BarPlot1>
       </TabPanel>
     </Box>
