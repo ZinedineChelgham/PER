@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-const BarPlot1 = ({ data }) => {
+const BarPlot1 = ({ data , title ,x_axis}) => {
     const [selectedOption, setSelectedOption] = useState('Overall');
     const svgRef = useRef();
     const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
+    const categories = Object.keys(data['Overall']);
     useEffect(() => {
         const margin = { top: 50, right: 300, bottom: 70, left: 40 }, // Increase right margin
             width = 1402 - margin.left - margin.right, // Decrease width to create space for checkboxes
@@ -37,18 +38,18 @@ const BarPlot1 = ({ data }) => {
             .attr("y", height + margin.top + 60) // Adjust the y position based on your preference
             .style("text-anchor", "middle")
             .style("font-size", "14px")
-            .text("Nombre d'heures complémentaires");
+            .text(x_axis);
         g.append("text") // Adding title above the chart
             .attr("x", width / 2)
             .attr("y", -30)
             .style("text-anchor", "middle")
             .style("font-size", "24px")
             .style("font-weight", "bold")
-            .text(`Nombre d'heures complémentaires en moyenne ces deux dernières années`);
+            .text(title);
         if (selectedOption === 'Sexe_Statut') {
             let plotData_homme_femme = data['Sexe_Statut'];
             let statuts = Object.keys(plotData_homme_femme);
-            let categories = ['<50', '51-80', '81-120', '121-150', 'bcp plus !'];
+
             let sexes = ['Un homme', 'Une femme'];
 
             x0.domain(statuts);
@@ -189,14 +190,14 @@ const BarPlot1 = ({ data }) => {
                     .attr("fill", color(0));
 
             } else {
-                x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
+                x0.domain(categories);
                 x1.domain(keys).rangeRound([0, x0.bandwidth()]);
                 y.domain([0, d3.max(keys, function (key) {
                     return d3.max(Object.values(plotData[key]));
                 })]).nice();
                 let bar = g.append("g")
                     .selectAll("g")
-                    .data(['<50', '51-80', '81-120', '121-150', 'bcp plus !'])
+                    .data(categories)
                     .enter().append("g")
                     .attr("transform", function (d) {
                         return "translate(" + x0(d) + ",0)";

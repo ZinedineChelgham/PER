@@ -179,8 +179,13 @@ function Enseignement() {
         </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
-          <p>dkeozdzedzed</p>
-          <BarPlot1 data={data}></BarPlot1>
+          <BarPlot1
+              data={data}
+              title={`Nombre d'heures complémentaires en moyenne ces deux dernières années`}
+              x_axis={"Nombre d'heures complémentaires"}
+          />
+
+
       </TabPanel>
     </Box>
   );
