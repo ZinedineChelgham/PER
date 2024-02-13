@@ -34,7 +34,7 @@ const BarPlot1 = ({ data }) => {
         svg
             .append("text") // Add x-axis title
             .attr("x", width / 2 + margin.left) // Adjust the x position based on your preference
-            .attr("y", height + margin.top + 40) // Adjust the y position based on your preference
+            .attr("y", height + margin.top + 60) // Adjust the y position based on your preference
             .style("text-anchor", "middle")
             .style("font-size", "14px")
             .text("Nombre d'heures complémentaires");
@@ -103,13 +103,34 @@ const BarPlot1 = ({ data }) => {
                 });
 
             // Append X and Y axes for Sexe_Statut
-            g.append("g")
+            let xAxis = g.append("g")
                 .attr("transform", "translate(0," + height + ")")
                 .call(d3.axisBottom(x0));
 
+            // Append categories to x-axis labels
+            let categoryAxis1 = g.append("g")
+                .attr("transform", "translate(0," + (height + 20) + ")")
+                .call(d3.axisBottom(x1).tickSizeOuter(0));
+
+            categoryAxis1.selectAll("text")
+                .style("text-anchor", "middle");
+
+            let categoryAxis2 = g.append("g")
+                .attr("transform", "translate(" + 1.1*x0.bandwidth() + "," + (height + 20) + ")")
+                .call(d3.axisBottom(x1).tickSizeOuter(0));
+
+            categoryAxis2.selectAll("text")
+                .style("text-anchor", "middle");
+
+            let categoryAxis3 = g.append("g")
+                .attr("transform", "translate(" + 2.22 * x0.bandwidth() + "," + (height + 20) + ")")
+                .call(d3.axisBottom(x1).tickSizeOuter(0));
+
+            categoryAxis3.selectAll("text")
+                .style("text-anchor", "middle");
+
             g.append("g")
                 .call(d3.axisLeft(y));
-            // Define color and legendKeys here
             let color1 = d3.scaleOrdinal()
                 .domain(['Professeur des Universités', 'Maître de Conférences (sans HDR)', 'Maître de Conférences (avec HDR)', 'Un homme', 'Une femme'])
                 .range([ '#d62728', '#9467bd']);  // Add your desired colors here
