@@ -7,9 +7,9 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
     const categories = Object.keys(data['Overall']);
     useEffect(() => {
         const margin = { top: 50, right: 300, bottom: 70, left: 40 }, // Increase right margin
-            width = 1402 - margin.left - margin.right, // Decrease width to create space for checkboxes
+            width = 1500 - margin.left - margin.right, // Decrease width to create space for checkboxes
             totalWidth = width + margin.left + margin.right,
-            height = 500 - margin.top - margin.bottom;
+            height = 600 - margin.top - margin.bottom;
         const svg = d3
             .select(svgRef.current)
             .html("")
@@ -39,6 +39,14 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
             .style("text-anchor", "middle")
             .style("font-size", "14px")
             .text(x_axis);
+        svg
+            .append("text") // Add y-axis title
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -margin.left + 10)
+            .style("text-anchor", "middle")
+            .style("font-size", "14px")
+            .text("Nombre de réponses");
         g.append("text") // Adding title above the chart
             .attr("x", width / 2)
             .attr("y", -30)
