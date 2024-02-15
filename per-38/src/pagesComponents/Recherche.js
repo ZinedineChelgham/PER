@@ -45,7 +45,30 @@ function Recherche() {
     };
 
 
-    const data_graph2=
+    const data_graph2={
+        Overall: {
+            '0': 109,
+            '1': 236,
+            '2': 198,
+            '3': 105,
+            '4': 46,
+            '5': 14,
+        },
+        Sexe: {
+            'Un homme': {'0': 75, '1': 168, '2': 130, '3': 80, '4': 43, '5': 13},
+            'Une femme': {'0': 34, '1': 68, '2': 68, '3': 25, '4': 3, '5': 1},
+        },
+        Statut: {
+            'Professeur des Universités': {'0': 33, '1': 95, '2': 74, '3': 42, '4': 16, '5': 5},
+            'Maître de Conférences (sans HDR)': {'0': 55, '1': 98, '2': 83, '3': 38, '4': 22, '5': 5},
+            'Maître de Conférences (avec HDR)': {'0': 18, '1': 40, '2': 32, '3': 19, '4': 6, '5': 1},
+        },
+        Sexe_Statut: {
+            'Professeur des Universités': {'Un homme': {'0': 24, '1': 72, '2': 50, '3': 26, '4': 16, '5': 5}, 'Une femme': {'0': 9, '1': 23, '2': 24, '3': 16, '4': 0, '5': 0}},
+            'Maître de Conférences (sans HDR)': {'Un homme': {'0': 38, '1': 72, '2': 53, '3': 33, '4': 20, '5': 5}, 'Une femme': {'0': 17, '1': 26, '2': 30, '3': 5, '4': 2, '5': 0}},
+            'Maître de Conférences (avec HDR)': {'Un homme': {'0': 11, '1': 21, '2': 20, '3': 16, '4': 5, '5': 1}, 'Une femme': {'0': 7, '1': 19, '2': 12, '3': 3, '4': 1, '5': 0}},
+        },
+    };
     const datas = [data_graph1, data_graph2];
 
     const getDataFromTitle = (title) => {
