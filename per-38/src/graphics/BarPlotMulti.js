@@ -6,10 +6,10 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
     const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
     const categories = Object.keys(data['Overall']);
     useEffect(() => {
-        const margin = { top: 50, right: 300, bottom: 70, left: 40 }, // Increase right margin
+        const margin = { top: 70, right: 300, bottom: 150, left: 70 }, // Increase right margin
             width = 1500 - margin.left - margin.right, // Decrease width to create space for checkboxes
             totalWidth = width + margin.left + margin.right,
-            height = 600 - margin.top - margin.bottom;
+            height = 600- margin.top - margin.bottom;
         const svg = d3
             .select(svgRef.current)
             .html("")
@@ -35,17 +35,18 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
         svg
             .append("text") // Add x-axis title
             .attr("x", width / 2 + margin.left) // Adjust the x position based on your preference
-            .attr("y", height + margin.top + 60) // Adjust the y position based on your preference
+            .attr("y", height + margin.top + 100) // Adjust the y position based on your preference
             .style("text-anchor", "middle")
-            .style("font-size", "14px")
+            .style("font-size", "16px")
+
             .text(x_axis);
         svg
             .append("text") // Add y-axis title
             .attr("transform", "rotate(-90)")
-            .attr("x", -height / 2)
-            .attr("y", -margin.left + 10)
+            .attr("x", -height / 2 - 60)
+            .attr("y", -margin.left + 100)
             .style("text-anchor", "middle")
-            .style("font-size", "14px")
+            .style("font-size", "16px")
             .text("Nombre de réponses");
         g.append("text") // Adding title above the chart
             .attr("x", width / 2)
@@ -112,31 +113,37 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
                 });
 
             // Append X and Y axes for Sexe_Statut
-            let xAxis = g.append("g")
-                .attr("transform", "translate(0," + height + ")")
+            let xAxis = g.append("g") // this is the one reposnsible
+                .attr("transform", "translate(0," + (height + 20 )+")")
                 .call(d3.axisBottom(x0));
 
             // Append categories to x-axis labels
             let categoryAxis1 = g.append("g")
-                .attr("transform", "translate(0," + (height + 20) + ")")
+                .attr("transform", "translate(0," + (height ) + ")")
                 .call(d3.axisBottom(x1).tickSizeOuter(0));
 
             categoryAxis1.selectAll("text")
-                .style("text-anchor", "middle");
+                .style("text-anchor", "middle")
+                .style("font-weight", "bold")
+                .style("font-size", "12px"); // Add this line for bold text
 
             let categoryAxis2 = g.append("g")
-                .attr("transform", "translate(" + 1.1*x0.bandwidth() + "," + (height + 20) + ")")
+                .attr("transform", "translate(" + 1.1*x0.bandwidth() + "," + (height ) + ")")
                 .call(d3.axisBottom(x1).tickSizeOuter(0));
 
             categoryAxis2.selectAll("text")
-                .style("text-anchor", "middle");
+                .style("text-anchor", "middle")
+                .style("font-weight", "bold")
+                .style("font-size", "12px"); // Add this line for bold text
 
             let categoryAxis3 = g.append("g")
-                .attr("transform", "translate(" + 2.22 * x0.bandwidth() + "," + (height + 20) + ")")
+                .attr("transform", "translate(" + 2.22 * x0.bandwidth() + "," + (height ) + ")")
                 .call(d3.axisBottom(x1).tickSizeOuter(0));
 
             categoryAxis3.selectAll("text")
-                .style("text-anchor", "middle");
+                .style("text-anchor", "middle")
+                .style("font-weight", "bold")
+                .style("font-size", "12px"); // Add this line for bold text
 
             g.append("g")
                 .call(d3.axisLeft(y));
@@ -146,7 +153,6 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
 
             let legendKeys = [ 'Un homme', 'Une femme'];
 
-// ... rest of your code ...
 
             let legend = g.append("g")
                 .attr("font-family", "sans-serif")
@@ -179,7 +185,7 @@ const BarPlot1 = ({ data , title ,x_axis}) => {
             let plotData = data[selectedOption];
             let keys = Object.keys(plotData);
             if (selectedOption === 'Overall') {
-                x0.domain(['<50', '51-80', '81-120', '121-150', 'bcp plus !']);
+                x0.domain(categories);
                 y.domain([0, d3.max(Object.values(plotData))]).nice();
                 g.selectAll(".bar")
                     .data(Object.entries(plotData))
