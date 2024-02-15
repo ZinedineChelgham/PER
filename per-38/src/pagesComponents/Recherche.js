@@ -1,36 +1,82 @@
 import React, { useState } from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import TabPanel from "../utilsComponents/TabPanel";
+import {GraphDataMapper} from "../graphics/GraphDataMapper";
+import DropDown from "../utilsComponents/DropDown";
+import BarPlot1 from "../graphics/BarPlotMulti";
 
 function Recherche() {
-  const [value, setValue] = useState(0);
+    const [checkedGraph, setCheckedGraph] = useState([]); // State to keep track of checked graphs
+    const cadreData = GraphDataMapper.enseignement;
+    const graphsTitles = ["Quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche","Nbe d'heures de recherche disponibles"];
+    const x_axis_Titles = ["Quantité de doctorants/stagiaires/...", "Nbe d'heures"];
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleCheckboxChange = (event, items) => {
+        console.log("🚀 ~ handleCheckboxChange ~ items:", items);
+        setCheckedGraph([...items]);
+    };
 
-  return (
-    <Box sx={{ width: "100%", paddingLeft: 2 }}>
-      <Tabs value={value} onChange={handleChange} left>
-        <Tab
-          label={
-            <Typography sx={{ fontWeight: "bold" }}>Monocritère</Typography>
-          }
-        />
-        <Tab
-          label={
-            <Typography sx={{ fontWeight: "bold" }}>Multicritère</Typography>
-          }
-        />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <Typography>Contenu de l'onglet Monocritère</Typography>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Typography>Contenu de l'onglet Multicritère</Typography>
-      </TabPanel>
-    </Box>
-  );
+
+
+
+    const data_graph1 = {
+        Overall: {
+            '0': 57,
+            '1': 126,
+            '2': 118,
+            '3': 135,
+            '4': 183,
+            '5': 79,
+        },
+        Sexe: {
+            'Un homme': {'0': 40, '1': 92, '2': 85, '3': 79, '4': 137, '5': 69},
+            'Une femme': {'0': 17, '1': 34, '2': 33, '3': 56, '4': 46, '5': 10},
+        },
+        Statut: {
+            'Professeur des Universités': {'0': 7, '1': 35, '2': 35, '3': 54, '4': 89, '5': 45},
+            'Maître de Conférences (sans HDR)': {'0': 40, '1': 65, '2': 63, '3': 53, '4': 55, '5': 14},
+            'Maître de Conférences (avec HDR)': {'0': 7, '1': 22, '2': 15, '3': 23, '4': 35, '5': 17},
+        },
+        Sexe_Statut: {
+            'Professeur des Universités': {'Un homme': {'0': 6, '1': 24, '2': 28, '3': 30, '4': 66, '5': 40}, 'Une femme': {'0': 1, '1': 11, '2': 7, '3': 24, '4': 23, '5': 5}},
+            'Maître de Conférences (sans HDR)': {'Un homme': {'0': 29, '1': 53, '2': 43, '3': 33, '4': 43, '5': 12}, 'Une femme': {'0': 11, '1': 12, '2': 20, '3': 20, '4': 12, '5': 2}},
+            'Maître de Conférences (avec HDR)': {'Un homme': {'0': 3, '1': 12, '2': 10, '3': 12, '4': 24, '5': 14}, 'Une femme': {'0': 4, '1': 10, '2': 5, '3': 11, '4': 11, '5': 3}},
+        },
+    };
+
+
+    const data_graph2=
+    const datas = [data_graph1, data_graph2];
+
+    const getDataFromTitle = (title) => {
+        // Use the appropriate data based on the selected graph title
+        const index = graphsTitles.indexOf(title);
+        return datas[index];
+    };
+
+
+    const getXAxisFromIndex = (title) => {
+        const index = graphsTitles.indexOf(title);
+        return x_axis_Titles[index];
+    };
+
+
+
+    return (
+        <div>
+            <Typography>Selectionnez une visualisation</Typography>
+            <DropDown items={graphsTitles} onSelec={handleCheckboxChange} />
+            {checkedGraph.map((data, index) => (
+                <div key={data}>
+                    <BarPlot1
+                        data={getDataFromTitle(data)}
+                        title={data}
+                        x_axis={getXAxisFromIndex(data)}
+                    />
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default Recherche;
