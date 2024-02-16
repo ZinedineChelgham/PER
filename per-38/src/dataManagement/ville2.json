@@ -1,4 +1,5 @@
 {
+
     "56000": {
         "respondantCount": 1,
         "femaleCount": 0,
@@ -30,9 +31,9 @@
         "otherCount": 0
     },
     "paris": {
-        "respondantCount": 68,
-        "femaleCount": 25,
-        "maleCount": 43,
+        "respondantCount": 92,
+        "femaleCount": 32,
+        "maleCount": 60,
         "otherCount": 0
     },
     "clermont ferrand": {
@@ -143,12 +144,7 @@
         "maleCount": 2,
         "otherCount": 0
     },
-    "villetaneuse": {
-        "respondantCount": 5,
-        "femaleCount": 1,
-        "maleCount": 4,
-        "otherCount": 0
-    },
+
     "bourges": {
         "respondantCount": 1,
         "femaleCount": 0,
@@ -161,12 +157,7 @@
         "maleCount": 9,
         "otherCount": 0
     },
-    "nanterre": {
-        "respondantCount": 3,
-        "femaleCount": 1,
-        "maleCount": 2,
-        "otherCount": 0
-    },
+
     "laval": {
         "respondantCount": 2,
         "femaleCount": 0,
@@ -221,12 +212,7 @@
         "maleCount": 2,
         "otherCount": 0
     },
-    "orsay": {
-        "respondantCount": 7,
-        "femaleCount": 1,
-        "maleCount": 6,
-        "otherCount": 0
-    },
+
 
     "montluçon": {
         "respondantCount": 1,
@@ -266,12 +252,7 @@
         "maleCount": 3,
         "otherCount": 0
     },
-    "palaiseau": {
-        "respondantCount": 4,
-        "femaleCount": 0,
-        "maleCount": 4,
-        "otherCount": 0
-    },
+ 
 
     "lorient": {
         "respondantCount": 1,
@@ -350,12 +331,7 @@
         "maleCount": 0,
         "otherCount": 0
     },
-    "champs sur marne": {
-        "respondantCount": 1,
-        "femaleCount": 1,
-        "maleCount": 0,
-        "otherCount": 0
-    },
+
     "bron": {
         "respondantCount": 2,
         "femaleCount": 0,
@@ -370,12 +346,7 @@
     },
 
 
-    "versailles": {
-        "respondantCount": 2,
-        "femaleCount": 1,
-        "maleCount": 1,
-        "otherCount": 0
-    },
+
 
     "amiens": {
         "respondantCount": 3,
@@ -499,12 +470,7 @@
         "maleCount": 0,
         "otherCount": 0
     },
-    "creteil": {
-        "respondantCount": 1,
-        "femaleCount": 1,
-        "maleCount": 0,
-        "otherCount": 0
-    },
+
     "montreal": {
         "respondantCount": 1,
         "femaleCount": 0,
@@ -518,12 +484,7 @@
         "maleCount": 1,
         "otherCount": 0
     },
-    "cergy": {
-        "respondantCount": 1,
-        "femaleCount": 1,
-        "maleCount": 0,
-        "otherCount": 0
-    },
+
     "cambrai": {
         "respondantCount": 1,
         "femaleCount": 0,

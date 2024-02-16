@@ -5,12 +5,13 @@ import franceDepartments from './france_departements.json';
 import './map.css';
 
 const FranceMap = ({ data }) => {
+  // Paris  :  palaiseau orsay versailles nanterre villetaneuse cergy courbevoie saclay gif sur yvette
   const svgRef = useRef();
   const tooltipRef = useRef();
   const barGraphRef = useRef(); // Ref for the bar graph container
 
-  const width = 600;
-  const height = 600;
+  const width = 675;
+  const height = 675;
 
   // Function to handle click event on circles
   const handleCircleClick = (event, d) => {
@@ -114,12 +115,29 @@ const FranceMap = ({ data }) => {
     const svg = d3.select(svgRef.current);
     const projection = d3.geoMercator().fitSize([width, height], franceGeoJson)
                          .center([2.2137, 46.2276]) // Geographic center of France
-                         .scale(2100);
+                         .scale(2600);
     const pathGenerator = d3.geoPath().projection(projection);
-    const g = svg.append('g');
+    const g = svg.select('g.map-container');
+
+    if (g.empty()) {
+      svg.append('g')
+         .attr('class', 'map-container')
+         .append('g'); 
+    }
+
+    const mapContainer = svg.select('g.map-container');
+
+    const zoom = d3.zoom()
+    .scaleExtent([1, 10]) // Set the scale limits
+    .translateExtent([[0, 0], [width, height]]) // Set the translation limits
+    .on('zoom', (event) => {
+      mapContainer.attr('transform', event.transform);
+    });
+
+  svg.call(zoom);
 
     // Draw the map
-    svg.selectAll(".region")
+    mapContainer.selectAll(".region")
        .data(franceDepartments.features)
        .enter()
        .append("path")
@@ -134,7 +152,7 @@ const FranceMap = ({ data }) => {
        });
 
     // Draw circles for each city with respondent count
-    svg.selectAll(".city-circle")
+    mapContainer.selectAll(".city-circle")
        .data(data) 
        .enter()
        .append("circle")
@@ -166,6 +184,8 @@ const FranceMap = ({ data }) => {
         }
       });
 
+   
+
   }, [data]);
 
   return (
@@ -173,7 +193,6 @@ const FranceMap = ({ data }) => {
       <div className="tooltip" ref={tooltipRef} />
 
       <svg ref={svgRef} width={width} height={height}>
-        <g ref={barGraphRef} /> {/* Container for the bar graph */}
       </svg>
     </div>
   );

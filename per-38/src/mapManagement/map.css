@@ -19,7 +19,6 @@ svg {
   max-height: 100vh;
   /* Ensures SVG is not taller than the viewport */
   color: #ca3535;
-  overflow: visible;
 }
 .bar-graph-container {
   position: absolute;
