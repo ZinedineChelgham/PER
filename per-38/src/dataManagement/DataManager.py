@@ -18,13 +18,19 @@ def transform_answers(answers):
 # Transform each respondent's data
 transformed_data = [transform_answers(resp) for resp in respondents_data]
 
-# Initialize dictionaries to store counts for each city
-city_counts = {}
+# List of cities considered part of Paris
+consideredParis = ["palaiseau", "orsay", "versailles", "nanterre", "villetaneuse", "cergy", "courbevoie", "saclay",
+"gif sur yvette","gif-sur-yvette","pparis" ,"'paris","région parisienne","region parisienne"]  # Add your cities here
+
+consideredNice = ["nice sophia antipolis","sophia antipolis"]
+# Initialize dictionaries to store counts for each city and associated IDs
+city_data = {}
 
 # Iterate over transformed data to count respondents and their genders for each city
 for respondent in transformed_data:
     city = respondent.get('Ville')
     gender = respondent.get('1 - Vous êtes ?')
+    respondent_id = respondent.get('Séquentiel')
 
     # Skip respondents without a city or gender
     if not city or not gender:
@@ -33,24 +39,52 @@ for respondent in transformed_data:
     # Normalize city name to lowercase
     city = city.lower()
 
-    # Initialize counts for the city if not already present
-    if city not in city_counts:
-        city_counts[city] = {'respondantCount': 0, 'femaleCount': 0, 'maleCount': 0, 'otherCount': 0}
+    # Initialize data for the city if not already present
+    if city not in city_data:
+        city_data[city] = {'respondantCount': 0, 'femaleCount': 0, 'maleCount': 0, 'otherCount': 0, 'ids': []}
 
     # Increment total respondent count for the city
-    city_counts[city]['respondantCount'] += 1
+    city_data[city]['respondantCount'] += 1
 
     # Increment gender-specific counts
     if gender == 'Un homme':
-        city_counts[city]['maleCount'] += 1
+        city_data[city]['maleCount'] += 1
     elif gender == 'Une femme':
-        city_counts[city]['femaleCount'] += 1
+        city_data[city]['femaleCount'] += 1
     else:
-        city_counts[city]['otherCount'] += 1
+        city_data[city]['otherCount'] += 1
 
-# Convert the city counts to JSON
-city_counts_json = json.dumps(city_counts, indent=4)
+    # Add the ID to the array for the city
+    if respondent_id:
+        city_data[city]['ids'].append(respondent_id)
 
-# Write the city counts to a JSON file
-with open('ville3.json', 'w') as file:
-    file.write(city_counts_json)
+    # Check if the city is considered part of Paris
+    if city in consideredParis:
+        # If yes, update counts and IDs for "paris"
+        paris_data = city_data.get('paris', {'respondantCount': 0, 'femaleCount': 0, 'maleCount': 0, 'otherCount': 0, 'ids': []})
+        paris_data['respondantCount'] += 1
+        if gender == 'Un homme':
+            paris_data['maleCount'] += 1
+        elif gender == 'Une femme':
+            paris_data['femaleCount'] += 1
+        paris_data['ids'].append(respondent_id)
+        city_data['paris'] = paris_data
+    # Check if the city is considered part of Nice
+    if city in consideredNice:
+        # If yes, update counts and IDs for "nice"
+
+        nice_data = city_data.get('nice', {'respondantCount': 0, 'femaleCount': 0, 'maleCount': 0, 'otherCount': 0, 'ids': []})
+        nice_data['respondantCount'] += 1
+        if gender == 'Un homme':
+            nice_data['maleCount'] += 1
+        elif gender == 'Une femme':
+            nice_data['femaleCount'] += 1
+        nice_data['ids'].append(respondent_id)
+        city_data['nice'] = nice_data        
+
+# Convert the city data to JSON
+city_data_json = json.dumps(city_data, indent=4)
+
+# Write the city data to a JSON file
+with open('ville5.json', 'w') as file:
+    file.write(city_data_json)

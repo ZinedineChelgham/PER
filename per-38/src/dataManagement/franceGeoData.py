@@ -11,7 +11,7 @@ def save_json(data, filename):
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 # Load the respondent counts per city
-ville_data = load_json('./ville2.json')
+ville_data = load_json('./ville5.json')
 
 # Load the cities details
 cities_details = load_json('./cities.json')
@@ -43,6 +43,9 @@ for city_detail in cities_details['cities']:
     city_detail['maleCount'] = ville_data[city_label]['maleCount']
     city_detail['otherCount'] = ville_data[city_label]['otherCount']
 
+    # Add the ids for the city
+    city_detail['ids'] = ville_data[city_label]['ids']
+
     updated_city_details.append(city_detail)
     added_cities.add(city_label)
 
@@ -50,7 +53,7 @@ for city_detail in cities_details['cities']:
 cities_details['cities'] = updated_city_details
 
 # Save the updated cities details back to a JSON file
-updated_cities_json_path = './updated_cities3.json'
+updated_cities_json_path = './updated_cities4.json'
 save_json(cities_details, updated_cities_json_path)
 
 print(f'Updated cities.json saved to {updated_cities_json_path}')

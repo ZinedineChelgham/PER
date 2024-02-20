@@ -1,0 +1,1358 @@
+{
+    "nice": {
+        "respondantCount": 27,
+        "femaleCount": 9,
+        "maleCount": 18,
+        "otherCount": 0,
+        "ids": [
+            "5",
+            "291",
+            "334",
+            "346",
+            "348",
+            "349",
+            "350",
+            "352",
+            "353",
+            "355",
+            "356",
+            "360",
+            "381",
+            "414",
+            "485",
+            "509",
+            "533",
+            "546",
+            "550",
+            "552",
+            "561",
+            "573",
+            "624",
+            "625",
+            "632",
+            "659",
+            "708"
+        ]
+    },
+    "toulouse": {
+        "respondantCount": 42,
+        "femaleCount": 23,
+        "maleCount": 19,
+        "otherCount": 0,
+        "ids": [
+            "102",
+            "103",
+            "108",
+            "124",
+            "147",
+            "152",
+            "213",
+            "261",
+            "263",
+            "286",
+            "332",
+            "362",
+            "367",
+            "386",
+            "423",
+            "474",
+            "476",
+            "507",
+            "520",
+            "545",
+            "556",
+            "558",
+            "570",
+            "586",
+            "587",
+            "590",
+            "594",
+            "595",
+            "598",
+            "601",
+            "602",
+            "610",
+            "612",
+            "614",
+            "626",
+            "629",
+            "630",
+            "633",
+            "666",
+            "682",
+            "718",
+            "741"
+        ]
+    },
+    "saclay": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "105",
+            "461"
+        ]
+    },
+    "paris": {
+        "respondantCount": 94,
+        "femaleCount": 31,
+        "maleCount": 63,
+        "otherCount": 0,
+        "ids": [
+            "105",
+            "107",
+            "110",
+            "116",
+            "117",
+            "125",
+            "136",
+            "155",
+            "163",
+            "167",
+            "170",
+            "173",
+            "176",
+            "178",
+            "182",
+            "184",
+            "186",
+            "195",
+            "214",
+            "224",
+            "229",
+            "254",
+            "256",
+            "268",
+            "271",
+            "310",
+            "331",
+            "343",
+            "369",
+            "372",
+            "373",
+            "375",
+            "376",
+            "379",
+            "385",
+            "394",
+            "398",
+            "400",
+            "402",
+            "403",
+            "405",
+            "406",
+            "411",
+            "412",
+            "420",
+            "430",
+            "433",
+            "435",
+            "436",
+            "437",
+            "438",
+            "441",
+            "443",
+            "445",
+            "448",
+            "450",
+            "459",
+            "461",
+            "462",
+            "466",
+            "467",
+            "471",
+            "475",
+            "478",
+            "479",
+            "481",
+            "488",
+            "491",
+            "497",
+            "503",
+            "504",
+            "531",
+            "548",
+            "549",
+            "551",
+            "553",
+            "557",
+            "583",
+            "592",
+            "597",
+            "631",
+            "663",
+            "664",
+            "668",
+            "671",
+            "678",
+            "687",
+            "698",
+            "706",
+            "707",
+            "723",
+            "731",
+            "732",
+            "735"
+        ]
+    },
+    "marseille": {
+        "respondantCount": 14,
+        "femaleCount": 1,
+        "maleCount": 13,
+        "otherCount": 0,
+        "ids": [
+            "106",
+            "198",
+            "216",
+            "218",
+            "220",
+            "226",
+            "241",
+            "259",
+            "319",
+            "320",
+            "413",
+            "425",
+            "427",
+            "528"
+        ]
+    },
+    "clermont ferrand": {
+        "respondantCount": 11,
+        "femaleCount": 4,
+        "maleCount": 7,
+        "otherCount": 0,
+        "ids": [
+            "109",
+            "215",
+            "273",
+            "428",
+            "472",
+            "484",
+            "604",
+            "645",
+            "667",
+            "150",
+            "235"
+        ]
+    },
+    "rennes": {
+        "respondantCount": 29,
+        "femaleCount": 8,
+        "maleCount": 21,
+        "otherCount": 0,
+        "ids": [
+            "111",
+            "148",
+            "161",
+            "165",
+            "166",
+            "169",
+            "179",
+            "194",
+            "196",
+            "219",
+            "242",
+            "243",
+            "244",
+            "274",
+            "278",
+            "279",
+            "315",
+            "339",
+            "382",
+            "397",
+            "418",
+            "422",
+            "457",
+            "515",
+            "543",
+            "571",
+            "572",
+            "679",
+            "690"
+        ]
+    },
+    "lille": {
+        "respondantCount": 27,
+        "femaleCount": 7,
+        "maleCount": 20,
+        "otherCount": 0,
+        "ids": [
+            "112",
+            "118",
+            "192",
+            "208",
+            "230",
+            "238",
+            "265",
+            "275",
+            "290",
+            "307",
+            "325",
+            "328",
+            "351",
+            "393",
+            "600",
+            "662",
+            "669",
+            "670",
+            "673",
+            "675",
+            "676",
+            "680",
+            "681",
+            "688",
+            "704",
+            "705",
+            "716"
+        ]
+    },
+    "orléans": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0,
+        "ids": [
+            "113",
+            "114",
+            "138",
+            "164",
+            "188",
+            "460",
+            "499"
+        ]
+    },
+    "caen": {
+        "respondantCount": 14,
+        "femaleCount": 2,
+        "maleCount": 12,
+        "otherCount": 0,
+        "ids": [
+            "115",
+            "253",
+            "288",
+            "297",
+            "300",
+            "305",
+            "313",
+            "314",
+            "316",
+            "317",
+            "322",
+            "323",
+            "361",
+            "434"
+        ]
+    },
+    "tours": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0,
+        "ids": [
+            "119",
+            "199",
+            "493",
+            "495",
+            "502",
+            "513",
+            "585"
+        ]
+    },
+    "nantes": {
+        "respondantCount": 30,
+        "femaleCount": 9,
+        "maleCount": 21,
+        "otherCount": 0,
+        "ids": [
+            "120",
+            "121",
+            "131",
+            "137",
+            "141",
+            "144",
+            "154",
+            "168",
+            "174",
+            "181",
+            "200",
+            "205",
+            "209",
+            "212",
+            "258",
+            "303",
+            "304",
+            "337",
+            "363",
+            "380",
+            "395",
+            "410",
+            "442",
+            "447",
+            "496",
+            "521",
+            "526",
+            "536",
+            "562",
+            "699"
+        ]
+    },
+    "bidart": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "122"
+        ]
+    },
+    "strasbourg": {
+        "respondantCount": 15,
+        "femaleCount": 4,
+        "maleCount": 11,
+        "otherCount": 0,
+        "ids": [
+            "123",
+            "248",
+            "324",
+            "364",
+            "383",
+            "523",
+            "596",
+            "606",
+            "623",
+            "643",
+            "644",
+            "648",
+            "656",
+            "657",
+            "711"
+        ]
+    },
+    "troyes": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "127",
+            "354"
+        ]
+    },
+    "grenoble": {
+        "respondantCount": 21,
+        "femaleCount": 11,
+        "maleCount": 10,
+        "otherCount": 0,
+        "ids": [
+            "128",
+            "129",
+            "145",
+            "149",
+            "187",
+            "357",
+            "358",
+            "365",
+            "387",
+            "439",
+            "482",
+            "487",
+            "490",
+            "505",
+            "516",
+            "519",
+            "524",
+            "567",
+            "591",
+            "608",
+            "651"
+        ]
+    },
+    "mulhouse": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "130",
+            "245",
+            "486"
+        ]
+    },
+    "bordeaux": {
+        "respondantCount": 16,
+        "femaleCount": 4,
+        "maleCount": 12,
+        "otherCount": 0,
+        "ids": [
+            "132",
+            "143",
+            "191",
+            "239",
+            "246",
+            "249",
+            "270",
+            "272",
+            "280",
+            "329",
+            "480",
+            "494",
+            "559",
+            "650",
+            "674",
+            "726"
+        ]
+    },
+    "lyon": {
+        "respondantCount": 20,
+        "femaleCount": 7,
+        "maleCount": 13,
+        "otherCount": 0,
+        "ids": [
+            "133",
+            "190",
+            "207",
+            "237",
+            "262",
+            "299",
+            "338",
+            "396",
+            "492",
+            "525",
+            "539",
+            "555",
+            "568",
+            "569",
+            "593",
+            "599",
+            "620",
+            "677",
+            "727",
+            "733"
+        ]
+    },
+    "evry": {
+        "respondantCount": 6,
+        "femaleCount": 1,
+        "maleCount": 5,
+        "otherCount": 0,
+        "ids": [
+            "135",
+            "377",
+            "446",
+            "455",
+            "702",
+            "277"
+        ]
+    },
+    "nancy": {
+        "respondantCount": 21,
+        "femaleCount": 3,
+        "maleCount": 18,
+        "otherCount": 0,
+        "ids": [
+            "146",
+            "359",
+            "416",
+            "429",
+            "449",
+            "454",
+            "458",
+            "544",
+            "634",
+            "637",
+            "639",
+            "640",
+            "642",
+            "647",
+            "649",
+            "660",
+            "661",
+            "686",
+            "694",
+            "717",
+            "720"
+        ]
+    },
+ 
+    "r\u00e9gion parisienne": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "155"
+        ]
+    },
+    "valdivia (chili)": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "156"
+        ]
+    },
+    "talence": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "158",
+            "162",
+            "252"
+        ]
+    },
+    "villetaneuse": {
+        "respondantCount": 5,
+        "femaleCount": 1,
+        "maleCount": 4,
+        "otherCount": 0,
+        "ids": [
+            "170",
+            "178",
+            "186",
+            "462",
+            "707"
+        ]
+    },
+    "bourges": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "172"
+        ]
+    },
+
+    "brest": {
+        "respondantCount": 10,
+        "femaleCount": 1,
+        "maleCount": 9,
+        "otherCount": 0,
+        "ids": [
+            "177",
+            "221",
+            "340",
+            "384",
+            "388",
+            "529",
+            "565",
+            "652",
+            "655",
+            "713"
+        ]
+    },
+    "nanterre": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "182",
+            "184",
+            "195"
+        ]
+    },
+    "laval": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "185",
+            "611"
+        ]
+    },
+    "créteil": {
+        "respondantCount": 4,
+        "femaleCount": 1,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "189",
+            "432",
+            "444",
+            "693"
+        ]
+    },
+    "province": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "193",
+            "654"
+        ]
+    },
+    "st denis": {
+        "respondantCount": 4,
+        "femaleCount": 0,
+        "maleCount": 4,
+        "otherCount": 0,
+        "ids": [
+            "201",
+            "257",
+            "312",
+            "554"
+        ]
+    },
+    "annecy": {
+        "respondantCount": 7,
+        "femaleCount": 2,
+        "maleCount": 5,
+        "otherCount": 0,
+        "ids": [
+            "203",
+            "233",
+            "276",
+            "326",
+            "341",
+            "342",
+            "508"
+        ]
+    },
+
+    "avignon": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "206"
+        ]
+    },
+    "poitiers": {
+        "respondantCount": 17,
+        "femaleCount": 2,
+        "maleCount": 15,
+        "otherCount": 0,
+        "ids": [
+            "210",
+            "236",
+            "240",
+            "264",
+            "281",
+            "282",
+            "283",
+            "284",
+            "293",
+            "294",
+            "295",
+            "378",
+            "389",
+            "473",
+            "532",
+            "538",
+            "563"
+        ]
+    },
+    "le havre": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "211",
+            "231",
+            "330"
+        ]
+    },
+    "orsay": {
+        "respondantCount": 7,
+        "femaleCount": 1,
+        "maleCount": 6,
+        "otherCount": 0,
+        "ids": [
+            "214",
+            "435",
+            "479",
+            "531",
+            "592",
+            "678",
+            "698"
+        ]
+    },
+
+    "montluçon": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "223"
+        ]
+    },
+    "montpellier": {
+        "respondantCount": 15,
+        "femaleCount": 7,
+        "maleCount": 8,
+        "otherCount": 0,
+        "ids": [
+            "225",
+            "227",
+            "371",
+            "419",
+            "483",
+            "498",
+            "511",
+            "577",
+            "578",
+            "579",
+            "588",
+            "603",
+            "609",
+            "613",
+            "628"
+        ]
+    },
+    "la rochelle": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "234"
+        ]
+    },
+
+    "toulon": {
+        "respondantCount": 5,
+        "femaleCount": 0,
+        "maleCount": 5,
+        "otherCount": 0,
+        "ids": [
+            "247",
+            "269",
+            "421",
+            "469",
+            "622"
+        ]
+    },
+    "dans le nord ouest": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "250"
+        ]
+    },
+    "courbevoie": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "254"
+        ]
+    },
+    "besançon": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "266",
+            "390",
+            "500"
+        ]
+    },
+    "palaiseau": {
+        "respondantCount": 4,
+        "femaleCount": 0,
+        "maleCount": 4,
+        "otherCount": 0,
+        "ids": [
+            "271",
+            "398",
+            "467",
+            "488"
+        ]
+    },
+
+    "lorient": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "287"
+        ]
+    },
+    "sophia antipolis": {
+        "respondantCount": 4,
+        "femaleCount": 2,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "291",
+            "485",
+            "533",
+            "546"
+        ]
+    },
+    "vannes": {
+        "respondantCount": 3,
+        "femaleCount": 2,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "292",
+            "506",
+            "739"
+        ]
+    },
+    "perpignan": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "306"
+        ]
+    },
+    "aix en provence / marseille": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "309",
+            "618"
+        ]
+    },
+    "schiltigheim": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "318"
+        ]
+    },
+    "le puy en velay": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "321"
+        ]
+    },
+    "villeneuve d'ascq": {
+        "respondantCount": 4,
+        "femaleCount": 1,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "333",
+            "431",
+            "672",
+            "734"
+        ]
+    },
+    "anglet": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "335",
+            "696"
+        ]
+    },
+    "rennes / paris": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "344"
+        ]
+    },
+    "nice sophia antipolis": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "356"
+        ]
+    },
+    "rouen": {
+        "respondantCount": 4,
+        "femaleCount": 1,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "374",
+            "607",
+            "619",
+            "683"
+        ]
+    },
+
+    "reims": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "401",
+            "564",
+            "582"
+        ]
+    },
+    "aix": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "404"
+        ]
+    },
+    "nouméa": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "407"
+        ]
+    },
+    "marne-la-vallée": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "408"
+        ]
+    },
+    "champs sur marne": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "409"
+        ]
+    },
+    "bron": {
+        "respondantCount": 2,
+        "femaleCount": 0,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "415",
+            "684"
+        ]
+    },
+    "dijon": {
+        "respondantCount": 5,
+        "femaleCount": 2,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "417",
+            "470",
+            "517",
+            "527",
+            "721"
+        ]
+    },
+    "pparis": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "420"
+        ]
+    },
+    "region parisienne": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "433"
+        ]
+    },
+    "versailles": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "443",
+            "664"
+        ]
+    },
+    "'paris": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "445"
+        ]
+    },
+    "amiens": {
+        "respondantCount": 3,
+        "femaleCount": 2,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "465",
+            "709",
+            "722"
+        ]
+    },
+    "lens": {
+        "respondantCount": 4,
+        "femaleCount": 2,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "510",
+            "537",
+            "575",
+            "615"
+        ]
+    },
+    "chambery": {
+        "respondantCount": 3,
+        "femaleCount": 0,
+        "maleCount": 3,
+        "otherCount": 0,
+        "ids": [
+            "514",
+            "204",
+            "740"
+        ]
+    },
+
+    "valenciennes": {
+        "respondantCount": 5,
+        "femaleCount": 1,
+        "maleCount": 4,
+        "otherCount": 0,
+        "ids": [
+            "522",
+            "715",
+            "719",
+            "729",
+            "737"
+        ]
+    },
+    "angers": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "530"
+        ]
+    },
+    "chasseneuil du poitou": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "534"
+        ]
+    },
+    "valence": {
+        "respondantCount": 4,
+        "femaleCount": 2,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "535",
+            "584",
+            "605",
+            "738"
+        ]
+    },
+    "villeurbanne": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "540",
+            "541",
+            "700"
+        ]
+    },
+    "st etienne": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "542",
+            "627"
+        ]
+    },
+    "corte": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "547"
+        ]
+    },
+ 
+    "blagnac (31)": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "566"
+        ]
+    },
+    "montpelllier": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "576"
+        ]
+    },
+    "béziers": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "580"
+        ]
+    },
+    "le mans": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "616"
+        ]
+    },
+    "56000": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "617"
+        ]
+    },
+    "metz": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "635",
+            "638"
+        ]
+    },
+    "limoges": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "653"
+        ]
+    },
+    "colmar": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "665"
+        ]
+    },
+    "gif sur yvette": {
+        "respondantCount": 2,
+        "femaleCount": 1,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "668",
+            "375"
+        ]
+    },
+    "belfort": {
+        "respondantCount": 3,
+        "femaleCount": 1,
+        "maleCount": 2,
+        "otherCount": 0,
+        "ids": [
+            "685",
+            "692",
+            "695"
+        ]
+    },
+    "versailles saint quentin en yvelines": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "689"
+        ]
+    },
+
+    "montreal": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "703"
+        ]
+    },
+
+    "salon de provence": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "710"
+        ]
+    },
+    "cergy": {
+        "respondantCount": 1,
+        "femaleCount": 1,
+        "maleCount": 0,
+        "otherCount": 0,
+        "ids": [
+            "723"
+        ]
+    },
+    "cambrai": {
+        "respondantCount": 1,
+        "femaleCount": 0,
+        "maleCount": 1,
+        "otherCount": 0,
+        "ids": [
+            "725"
+        ]
+    }
+}
