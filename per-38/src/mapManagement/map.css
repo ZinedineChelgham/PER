@@ -1,12 +1,15 @@
 /* Add this to your CSS file or in a <style> tag */
 .map-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  justify-content: space-evenly;
+  align-items: baseline;
+  width: 81%;
   height: 50vh;
   padding: 2rem;
   box-sizing: border-box;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 svg {
@@ -20,11 +23,13 @@ svg {
   /* Ensures SVG is not taller than the viewport */
   color: #ca3535;
 }
+
 .bar-graph-container {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 999; /* Ensure it's displayed on top of other elements */
+  z-index: 999;
+  /* Ensure it's displayed on top of other elements */
 }
 
 

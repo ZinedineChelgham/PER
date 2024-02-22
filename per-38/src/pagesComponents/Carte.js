@@ -7,7 +7,7 @@ function Carte() {
   return (
     <div>
       <Typography variant="h4" textAlign={"center"}>
-        Réponse des différentes universités en france
+        Réponse des différentes universités
       </Typography>
       <FranceMap data={data.cities} />
     </div>
