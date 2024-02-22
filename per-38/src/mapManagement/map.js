@@ -387,7 +387,8 @@ const FranceMap = ({ data }) => {
 
       <svg ref={svgRef} width={width} height={height}></svg>
       <DropDown
-        items={["Gender Count", "Statut Count"]}
+        inputLabel={"critères de comparaison après selection"}
+        items={["Genre", "Statut"]}
         onSelec={handleDropDownChange}
       />
     </div>

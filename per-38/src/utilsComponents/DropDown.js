@@ -7,7 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useState } from "react";
 
-function DropDown({ items, onSelec }) {
+function DropDown({ items, onSelec, inputLabel }) {
   const theme = useTheme();
   const [selectedItems, setSelectedItems] = useState([]);
 
@@ -26,14 +26,16 @@ function DropDown({ items, onSelec }) {
   return (
     <div>
       <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-name-label">Graphique</InputLabel>
+        <InputLabel id="demo-multiple-name-label">
+          {inputLabel || "Graphique"}
+        </InputLabel>
         <Select
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
           // multiple
           value={selectedItems}
           onChange={handleChange}
-          input={<OutlinedInput label="Graphique" />}
+          input={<OutlinedInput label={inputLabel || "Graphique"} />}
           //MenuProps={}
         >
           {items.map((name) => (
