@@ -26,18 +26,17 @@ export const GraphDataMapper = {
     {
       title: "Appréciation personnelle sur l'enseignement",
       data: [
-        { category: "J'aime toujours enseigner", percentage: 51.43 },
+        { category: "J'aime toujours", percentage: 51.43 },
         {
-          category:
-            "J'aime toujours enseigner mais un demi service me suffirait",
+          category: "J'aime mais un peu moins",
           percentage: 41.61,
         },
         {
-          category: "S'il y a un moyen de ne plus en enseigner, ça m'intéresse",
+          category: "Je veux arrêter",
           percentage: 6.82,
         },
         {
-          category: "Je déconseille à quiconque de devenir enseignant",
+          category: "Je déconseille",
           percentage: 0.14,
         },
       ],

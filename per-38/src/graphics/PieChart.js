@@ -66,7 +66,9 @@ const PieChart = ({ data, title }) => {
       .attr(
         "transform",
         (d, i) =>
-          `translate(-${width / 2 - margin}, ${-height / 2 + margin + i * 20})`
+          `translate(-${width / 2 - margin + 40}, ${
+            -height / 2 + margin + i * 20
+          })`
       );
 
     legend
