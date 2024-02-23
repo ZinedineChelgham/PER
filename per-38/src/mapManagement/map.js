@@ -12,7 +12,7 @@ const FranceMap = ({ data }) => {
   const svgRef = useRef();
   const tooltipRef = useRef();
   const barGraphRef = useRef(); // Ref for the bar graph container
-  const selectedOptionRef = useRef("Statut Count"); // Default selected option
+  const selectedOptionRef = useRef("Statut"); // Default selected option
 
   const width = 675;
   const height = 675;
@@ -361,9 +361,9 @@ const FranceMap = ({ data }) => {
         console.log("city", d);
       })
       .on("click", (event, d) => {
-        if (selectedOptionRef.current === "Gender Count") {
+        if (selectedOptionRef.current === "Genre") {
           handleCircleClick(event, d);
-        } else if (selectedOptionRef.current === "Statut Count") {
+        } else if (selectedOptionRef.current === "Statut") {
           drawStatutGraph(event, d);
         }
       })
