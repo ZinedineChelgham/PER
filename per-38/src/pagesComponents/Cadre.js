@@ -24,9 +24,17 @@ function Cadre() {
         <Typography>Selectionnez une visualisation</Typography>
         <DropDown items={graphsTitles} onSelec={handleCheckboxChange} />
       </Grid>
-      <Grid item xs={9} height={"100%"}>
+      <Grid
+        item
+        container
+        xs={9}
+        height={"100%"}
+        //alignItems={"center"}
+        justifyContent={"start"}
+        marginTop={4}
+      >
         {checkedGraph.map((data, index) => (
-          <Grid item key={data} xs={6}>
+          <Grid item key={data} xs={8}>
             <MonoGraphContainer data={getDataFromTitle(data)} title={data} />
           </Grid>
         ))}
