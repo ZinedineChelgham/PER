@@ -17,6 +17,7 @@ const FranceMap = ({ data }) => {
   const width = 675;
   const height = 675;
 
+
   // Function to draw the "Statut" graph
   const drawStatutGraph = (event, d) => {
     // Clear existing bar graph container
@@ -27,7 +28,13 @@ const FranceMap = ({ data }) => {
       .select(svgRef.current)
       .append("g")
       .attr("class", "bar-graph")
-      .attr("transform", `translate(${event.offsetX}, ${event.offsetY})`);
+      .attr("transform", `translate(${event.offsetX}, ${event.offsetY})`)
+      .call(d3.drag() // Enable drag behavior
+      .on("drag", (event) => barGraph.attr("transform", `translate(${event.x}, ${event.y})`))
+  );
+
+
+
 
     // Container for the rectangle enclosing the bar graph
     const rectWidth = 150;
@@ -45,7 +52,7 @@ const FranceMap = ({ data }) => {
       .attr("width", rectWidth)
       .attr("height", rectHeight)
       .attr("fill", "white")
-      .attr("stroke", "black");
+      .attr("stroke", "black")
 
     // Close icon
     rectContainer
@@ -168,6 +175,144 @@ const FranceMap = ({ data }) => {
       )
       .attr("transform", `translate(-10, 3)`);
   };
+  const drawAncienneteGraph = (event, d) => {
+    // Clear existing bar graph container
+    //d3.select('.bar-graph').remove();
+
+    // Create a container for the bar graph
+    const barGraph = d3
+      .select(svgRef.current)
+      .append("g")
+      .attr("class", "bar-graph")
+      .attr("transform", `translate(${event.offsetX}, ${event.offsetY})`)
+      .call(d3.drag() // Enable drag behavior
+          .on("drag", (event) => barGraph.attr("transform", `translate(${event.x}, ${event.y})`))
+      );
+
+    // Container for the rectangle enclosing the bar graph
+    const rectWidth = 150;
+    const rectHeight = 120;
+    const rectMargin = 10;
+
+    const rectContainer = barGraph
+      .append("g")
+      .attr("class", "rect-container")
+      .attr("transform", `translate(10, -10)`);
+
+    // Draw the rectangle with white background
+    rectContainer
+      .append("rect")
+      .attr("width", rectWidth)
+      .attr("height", rectHeight)
+      .attr("fill", "white")
+      .attr("stroke", "black");
+
+    // Close icon
+    rectContainer
+      .append("text")
+      .attr("class", "close-icon")
+      .attr("x", rectWidth - 10)
+      .attr("y", 10)
+      .attr("text-anchor", "end")
+      .attr("cursor", "pointer")
+      .text("✖️")
+      .on("click", () => barGraph.remove()); // Remove the bar graph when close icon is clicked
+
+    // Define the possible anciennete responses
+    const possibleAnciennete = [
+      "< 5 ans",
+      "entre 5 et 10 ans",
+      "> 10 ans",
+      "> 20 ans",
+    ];
+
+    // Extract IDs from the city data
+    const ids = d.ids;
+
+    // Create an array to store the anciennete data
+    const ancienneteData = [];
+
+    //Read the transformed data
+    const transformedData = transfomredData;
+
+    // Iterate over the IDs to get the corresponding anciennete data
+    ids.forEach((id) => {
+      const ancienneteEntry = transformedData.find(
+        (entry) => entry["Séquentiel"] === id
+      );
+      if (ancienneteEntry && ancienneteEntry["Votre ancienneté dans la profession d'enseignant/chercheur (permanent ou non)"]) {
+        ancienneteData.push(ancienneteEntry["Votre ancienneté dans la profession d'enseignant/chercheur (permanent ou non)"]);
+      }
+    });
+
+    // Count the occurrences of each anciennete response
+    const ancienneteCounts = possibleAnciennete.map((anciennete) => ({
+      anciennete,
+      count: ancienneteData.filter((entry) => entry === anciennete).length,
+    }));
+
+    // Scales for the bar graph
+    const xScale = d3
+      .scaleBand()
+      .domain(possibleAnciennete)
+      .range([rectMargin, rectWidth - rectMargin])
+      .padding(0.1);
+
+    const yScale = d3
+      .scaleLinear()
+      .domain([0, d3.max(ancienneteCounts, (d) => d.count)])
+      .range([rectHeight - rectMargin, rectMargin]);
+
+    // Draw bars
+    rectContainer
+      .selectAll(".bar")
+      .data(ancienneteCounts)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", (d) => xScale(d.anciennete))
+      .attr("y", (d) => yScale(d.count))
+      .attr("width", xScale.bandwidth() - 15)
+      .attr("height", (d) => rectHeight - rectMargin - yScale(d.count))
+      .attr("fill", "rgb(12,240,233)")
+      .on("mouseover", (event, d) => {
+        // Show tooltip of the count
+        const tooltipDiv = tooltipRef.current;
+        if (tooltipDiv) {
+          d3.select(tooltipDiv)
+            .transition()
+            .duration(200)
+            .style("opacity", 0.9);
+          d3.select(tooltipDiv)
+            .html(`${d.anciennete}: ${d.count} respondents`)
+            .style("left", event.pageX + "px")
+            .style("top", event.pageY - 28 + "px");
+        }
+      })
+      .on("mouseout", () => {
+        // Hide tooltip on mouseout
+        const tooltipDiv = tooltipRef.current;
+        if (tooltipDiv) {
+          d3.select(tooltipDiv).transition().duration(500).style("opacity", 0);
+        }
+      });
+
+    // Draw labels
+    rectContainer
+      .selectAll(".label")
+      .data(ancienneteCounts)
+      .enter()
+      .append("text")
+      .attr("class", "label")
+      .attr("x", (d) => xScale(d.anciennete) + xScale.bandwidth() / 2)
+      .attr("y", rectHeight - 5)
+      .attr("text-anchor", "middle")
+      .attr("font-size", "10px") // Set font size to 10 pixels
+      .attr("font-weight", "bold") // Set font weight to bold
+      .text((d) => (d.anciennete === "< 5 ans" ? "< 5" : d.anciennete === "entre 5 et 10 ans" ? "5-10" : d.anciennete === "> 10 ans" ? "> 10" : "> 20"))
+      .attr("transform", `translate(-10, 3)`);
+  };
+
 
   // Function to handle click event on circles
   const handleCircleClick = (event, d) => {
@@ -177,7 +322,10 @@ const FranceMap = ({ data }) => {
       .append("g")
       .attr("class", "bar-graph")
       .attr("transform", `translate(${event.offsetX}, ${event.offsetY})`)
-      .attr("z-index", 1000);
+      .attr("z-index", 1000)
+      .call(d3.drag() // Enable drag behavior
+      .on("drag", (event) => barGraph.attr("transform", `translate(${event.x}, ${event.y})`))
+  );
 
     // Container for the rectangle enclosing the bar graph
     const rectWidth = 150;
@@ -318,7 +466,6 @@ const FranceMap = ({ data }) => {
       .attr("stroke-width", 1.5)
       .on("click", (event, d) => {
         d3.select(event.target).attr("fill", "#ff0000");
-        console.log("department", d.properties.nom);
       });
 
     // Draw circles for each city with respondent count
@@ -358,12 +505,14 @@ const FranceMap = ({ data }) => {
             .style("top", event.pageY - 28 + "px");
         }
 
-        console.log("city", d);
       })
       .on("click", (event, d) => {
         if (selectedOptionRef.current === "Genre") {
           handleCircleClick(event, d);
-        } else if (selectedOptionRef.current === "Statut") {
+        } else if (selectedOptionRef.current === "Ancienneté") {
+          drawAncienneteGraph(event, d);
+        }
+        else if (selectedOptionRef.current === "Statut") {
           drawStatutGraph(event, d);
         }
       })
@@ -373,12 +522,11 @@ const FranceMap = ({ data }) => {
           d3.select(tooltipDiv).transition().duration(500).style("opacity", 0);
         }
       });
+
   }, [data]);
 
   const handleDropDownChange = (selectedOption) => {
     selectedOptionRef.current = selectedOption.target.value;
-    console.log("Selected option", selectedOption);
-    console.log("Selected option value", selectedOptionRef.current);
   };
 
   return (
@@ -388,7 +536,7 @@ const FranceMap = ({ data }) => {
       <svg ref={svgRef} width={width} height={height}></svg>
       <DropDown
         inputLabel={"critères de comparaison après selection"}
-        items={["Genre", "Statut"]}
+        items={["Genre", "Statut", "Ancienneté"]}
         onSelec={handleDropDownChange}
       />
     </div>
