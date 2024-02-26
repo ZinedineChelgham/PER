@@ -77,6 +77,7 @@ function Presentation({ handleTabChange }) {
                   type="pie"
                   data={graph.graph.data}
                   title={graph.graph.title}
+                  info={graph.graph.info}
                 />
               </Box>
             </Tooltip>
