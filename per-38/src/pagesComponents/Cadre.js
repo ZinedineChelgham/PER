@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { GraphDataMapper } from "../graphics/GraphDataMapper";
+import { GraphDataMapper } from "../utils/GraphDataMapper";
 import DropDown from "../utilsComponents/DropDown";
 import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 

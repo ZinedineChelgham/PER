@@ -5,7 +5,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Chart from "../graphics/Chart";
-import { GraphDataMapper } from "../graphics/GraphDataMapper";
+import { GraphDataMapper } from "../utils/GraphDataMapper";
 
 function Presentation({ handleTabChange }) {
   const getFirstGraphOfEachCategory = () => {
