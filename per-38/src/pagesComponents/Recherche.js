@@ -4,6 +4,7 @@ import TabPanel from "../utilsComponents/TabPanel";
 import {GraphDataMapper} from "../graphics/GraphDataMapper";
 import DropDown from "../utilsComponents/DropDown";
 import BarPlot1 from "../graphics/BarPlotMulti";
+import MultiGraphContainer from "../utilsComponents/MultiGraphContainer";
 
 function Recherche() {
     const [checkedGraph, setCheckedGraph] = useState([]); // State to keep track of checked graphs
@@ -91,10 +92,9 @@ function Recherche() {
             <DropDown items={graphsTitles} onSelec={handleCheckboxChange} />
             {checkedGraph.map((data, index) => (
                 <div key={data}>
-                    <BarPlot1
-                        data={getDataFromTitle(data)}
-                        title={data}
-                        x_axis={getXAxisFromIndex(data)}
+                    <MultiGraphContainer data={getDataFromTitle(data)}
+                                         title={data}
+                                         x_axis={getXAxisFromIndex(data)}
                     />
                 </div>
             ))}

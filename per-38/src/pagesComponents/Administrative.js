@@ -5,6 +5,7 @@ import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
 import DropDown from "../utilsComponents/DropDown";
 import BarPlot1 from "../graphics/BarPlotMulti";
 import {GraphDataMapper} from "../graphics/GraphDataMapper";
+import MultiGraphContainer from "../utilsComponents/MultiGraphContainer";
 
 function Administrative() {
     const [checkedGraph, setCheckedGraph] = useState([]); // State to keep track of checked graphs
@@ -88,10 +89,9 @@ function Administrative() {
             <DropDown items={graphsTitles} onSelec={handleCheckboxChange} />
             {checkedGraph.map((data, index) => (
                 <div key={data}>
-                    <BarPlot1
-                        data={getDataFromTitle(data)}
-                        title={data}
-                        x_axis={getXAxisFromIndex(data)}
+                    <MultiGraphContainer data={getDataFromTitle(data)}
+                                         title={data}
+                                         x_axis={getXAxisFromIndex(data)}
                     />
                 </div>
             ))}
