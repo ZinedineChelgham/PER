@@ -3,6 +3,9 @@ import { Typography } from "@mui/material";
 import DropDown from "../utilsComponents/DropDown";
 import BarPlot1 from "../graphics/BarPlotMulti";
 import { GraphDataMapper } from "../graphics/GraphDataMapper";
+import PieChartMulti from "../graphics/PieChartMulti";
+import MonoGraphContainer from "../utilsComponents/MonoGraphContainer";
+import MultiGraphContainer from "../utilsComponents/MultiGraphContainer";
 
 function Enseignement() {
     const [checkedGraph, setCheckedGraph] = useState([]); // State to keep track of checked graphs
@@ -137,10 +140,9 @@ function Enseignement() {
             <DropDown items={graphsTitles} onSelec={handleCheckboxChange} />
             {checkedGraph.map((data, index) => (
                 <div key={data}>
-                    <BarPlot1
-                        data={getDataFromTitle(data)}
-                        title={data}
-                        x_axis={getXAxisFromIndex(data)}
+                    <MultiGraphContainer data={getDataFromTitle(data)}
+                                        title={data}
+                                         x_axis={getXAxisFromIndex(data)}
                     />
                 </div>
             ))}
