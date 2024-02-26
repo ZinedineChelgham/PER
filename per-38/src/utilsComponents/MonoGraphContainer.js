@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import React, { useState } from "react";
 import Chart from "../graphics/Chart";
 
-function MonoGraphContainer({ title, data }) {
+function MonoGraphContainer({ title, data, info }) {
   const [graphType, setGraphType] = useState("pie");
 
   const handleIconClick = (iconName) => {
@@ -20,7 +20,7 @@ function MonoGraphContainer({ title, data }) {
       sx={{ marginBottom: 4 }}
     >
       <Grid item xs={12}>
-        <Chart type={graphType} title={title} data={data} />
+        <Chart type={graphType} title={title} data={data} info={info} />
       </Grid>
 
       <Grid item>

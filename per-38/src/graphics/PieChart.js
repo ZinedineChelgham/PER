@@ -1,8 +1,10 @@
 import * as d3 from "d3";
 import React, { useEffect, useRef } from "react";
 
-const PieChart = ({ data, title }) => {
+const PieChart = ({ data, title, info }) => {
   const ref = useRef();
+
+  console.log(info, "info from PieChart");
 
   useEffect(() => {
     const width = 602; // Ajustez la largeur si nécessaire
@@ -83,7 +85,22 @@ const PieChart = ({ data, title }) => {
       .attr("y", 9)
       .attr("dy", ".35em")
       .text((d, i) => data[i].category);
-  }, [data, title]);
+
+    const infoIcon = svg
+      .append("g")
+      .attr(
+        "transform",
+        `translate(${width / 2 - margin / 2}, ${-height / 2 + margin / 4})`
+      );
+
+    infoIcon
+      .append("foreignObject")
+      .attr("width", 20)
+      .attr("height", 20)
+      .html(
+        `<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"><div title="${info}">&#x1F6C8;</div></div>`
+      );
+  }, [data, title, info]);
 
   return <svg ref={ref}></svg>;
 };

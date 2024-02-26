@@ -1,13 +1,13 @@
 import * as d3 from "d3";
 import React, { useEffect, useRef } from "react";
 
-const BarPlot = ({ data, title }) => {
+const BarPlot = ({ data, title, info }) => {
   const ref = useRef();
 
   useEffect(() => {
-    const width = 602; // Adjust width if needed
-    const height = 418; // Adjust height if needed
-    const margin = { top: 50, right: 50, bottom: 50, left: 50 }; // Adjust margins if needed
+    const width = 602;
+    const height = 418;
+    const margin = { top: 50, right: 50, bottom: 50, left: 50 };
 
     const svg = d3
       .select(ref.current)
@@ -36,7 +36,6 @@ const BarPlot = ({ data, title }) => {
       .style("text-anchor", "end")
       .attr("transform", "rotate(-45)");
 
-    // Append "%" to the y-axis tick values
     svg.append("g").call(d3.axisLeft(y).tickFormat((d) => `${d}%`));
 
     svg
@@ -52,8 +51,8 @@ const BarPlot = ({ data, title }) => {
         "height",
         (d) => height - margin.top - margin.bottom - y(d.percentage)
       )
-      .attr("fill", "#69b3a2") // Adjust bar color if needed
-      .append("title") // Append title element for tooltip
+      .attr("fill", "#69b3a2")
+      .append("title")
       .text((d) => `${d.percentage}%`);
 
     svg
@@ -64,7 +63,22 @@ const BarPlot = ({ data, title }) => {
       .style("font-size", "16px")
       .style("font-weight", "bold")
       .text(title);
-  }, [data, title]);
+
+    const infoIcon = svg
+      .append("g")
+      .attr(
+        "transform",
+        `translate(${width - margin.right - 25}, ${margin.top - 75})`
+      );
+
+    infoIcon
+      .append("foreignObject")
+      .attr("width", 20)
+      .attr("height", 20)
+      .html(
+        `<div style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"><div title="${info}">&#x1F6C8;</div></div>`
+      ); // Adjust the font-size and other styles as needed
+  }, [data, title, info]);
 
   return <svg ref={ref}></svg>;
 };

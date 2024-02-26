@@ -9,6 +9,8 @@ export const GraphDataMapper = {
         { category: "Pas du tout", percentage: 33.24 },
       ],
       title: "Métier toujours intéressant?",
+      info:
+        "Les cadres sont moins satisfaits de leur métier que les autres catégories.",
     },
     {
       data: [
@@ -19,6 +21,8 @@ export const GraphDataMapper = {
         { category: "Pas du tout", percentage: 3.3 },
       ],
       title: "Métier toujours attirant?",
+      info:
+        "Les cadres sont moins satisfaits de leur métier que les autres catégories.",
     },
   ],
   administrative: [], // Empty array for now
@@ -40,6 +44,7 @@ export const GraphDataMapper = {
           percentage: 0.14,
         },
       ],
+      info: "Les enseignants sont plutôt satisfaits de leur métier.",
     },
   ],
   // Empty array for now

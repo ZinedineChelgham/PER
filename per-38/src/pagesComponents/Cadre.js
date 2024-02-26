@@ -18,6 +18,10 @@ function Cadre() {
     return cadreData.find((data) => data.title === title).data;
   };
 
+  const getInfosFromTitle = (title) => {
+    return cadreData.find((data) => data.title === title).info;
+  };
+
   return (
     <Grid container spacing={2} width="100%" height={"100%"} paddingLeft={2}>
       <Grid item xs={3} height={"100%"}>
@@ -35,7 +39,11 @@ function Cadre() {
       >
         {checkedGraph.map((data, index) => (
           <Grid item key={data} xs={8}>
-            <MonoGraphContainer data={getDataFromTitle(data)} title={data} />
+            <MonoGraphContainer
+              data={getDataFromTitle(data)}
+              title={data}
+              info={getInfosFromTitle(data)}
+            />
           </Grid>
         ))}
       </Grid>

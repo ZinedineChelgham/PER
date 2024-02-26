@@ -6,6 +6,7 @@ const Chart = ({
   type,
   data,
   title,
+  info,
   width = 602,
   height = 418,
   margin = 50,
@@ -15,6 +16,7 @@ const Chart = ({
       <PieChart
         data={data}
         title={title}
+        info={info}
         width={width}
         height={height}
         margin={margin}
@@ -25,6 +27,7 @@ const Chart = ({
       <BarPlot
         data={data}
         title={title}
+        info={info}
         width={width}
         height={height}
         margin={margin}
