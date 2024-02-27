@@ -13,7 +13,8 @@ function Presentation({ handleTabChange }) {
     const firstGraphs = [];
     categ.forEach((cat) => {
       const graph = GraphDataMapper[cat][0];
-      if (graph) firstGraphs.push({ graph: graph, category: cat });
+      if (graph && graph.type === "monocritere")
+        firstGraphs.push({ graph: graph, category: cat });
     });
     console.log(firstGraphs);
     return firstGraphs;
