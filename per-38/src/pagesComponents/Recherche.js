@@ -55,6 +55,7 @@ function Recherche() {
                 data={getDataFromTitle(title)}
                 title={title}
                 x_axis={getXAxisFromIndex(title)}
+                info={getInfosFromTitle(title)}
               />
             </div>
           );

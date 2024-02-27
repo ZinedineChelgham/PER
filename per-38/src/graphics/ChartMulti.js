@@ -7,6 +7,7 @@ const ChartMulti = ({
   data,
   title,
   x_axis,
+  info,
   width = 602,
   height = 418,
   margin = 50,
@@ -16,6 +17,7 @@ const ChartMulti = ({
       <PieChartMulti
         data={data}
         title={title}
+        info={info}
         width={width}
         height={height}
         margin={margin}
@@ -27,6 +29,7 @@ const ChartMulti = ({
         data={data}
         title={title}
         x_axis={x_axis}
+        info={info}
         width={width}
         height={height}
         margin={margin}

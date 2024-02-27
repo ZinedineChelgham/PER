@@ -54,6 +54,7 @@ export const GraphDataMapper = {
   recherche: [
     {
       type: "multicritere",
+      info: "contexte sur le graphique a definir ...",
       title:
         "Quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche",
       x_axis_Titles: "Quantité de doctorants/stagiaires/...",
@@ -128,6 +129,7 @@ export const GraphDataMapper = {
     },
     {
       type: "multicritere",
+      info: "contexte sur le graphique a definir ...",
       title: "Nbe d'heures de recherche disponibles",
       x_axis_Titles: "Nbe d'heures de recherche disponibles",
       data: {

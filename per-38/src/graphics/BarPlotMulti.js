@@ -1,10 +1,12 @@
 import * as d3 from "d3";
 import React, { useEffect, useRef, useState } from "react";
-const BarPlot1 = ({ data, title, x_axis }) => {
+const BarPlot1 = ({ data, title, x_axis, info }) => {
+  console.log("🚀 ~ BarPlot1 ~ info:", info);
   const [selectedOption, setSelectedOption] = useState("Overall");
   const svgRef = useRef();
   const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
   const categories = Object.keys(data["Overall"]);
+
   useEffect(() => {
     const margin = { top: 70, right: 300, bottom: 150, left: 70 }, // Increase right margin
       width = 1500 - margin.left - margin.right, // Decrease width to create space for checkboxes
@@ -349,6 +351,18 @@ const BarPlot1 = ({ data, title, x_axis }) => {
         checkboxGroup.append("xhtml:br");
       });
     });
+
+    const infoIcon = svg
+      .append("g")
+      .attr("transform", `translate(${width + 300}, ${margin.top - 50})`);
+
+    infoIcon
+      .append("foreignObject")
+      .attr("width", 20)
+      .attr("height", 20)
+      .html(
+        `<div style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"><div title="${info}">&#x1F6C8;</div></div>`
+      ); // Adjust the font-size and other styles as needed
   }, [selectedOption]);
 
   return <svg ref={svgRef}></svg>;

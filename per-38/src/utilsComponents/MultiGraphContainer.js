@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import React, { useState } from "react";
 import ChartMulti from "../graphics/ChartMulti";
 
-function MultiGraphContainer({ title, data, x_axis }) {
+function MultiGraphContainer({ title, data, x_axis, info }) {
   const [graphType, setGraphType] = useState("pie");
 
   const handleIconClick = (iconName) => {
@@ -25,6 +25,7 @@ function MultiGraphContainer({ title, data, x_axis }) {
           title={title}
           data={data}
           x_axis={x_axis}
+          info={info}
         />
       </Grid>
 
