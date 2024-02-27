@@ -58,7 +58,8 @@ function Presentation({ handleTabChange }) {
           </Typography>
           <Typography>
             Vous pouvez contribuer à l'amélioration de ce site en faisant part
-            de vos remarques à l'adresse suivante : <a href="mailto:xx">xx</a>
+            de vos remarques à l'adresse suivante :{" "}
+            <a href="mailto:">Christel.Dartigues-Pallez@univ-cotedazur.fr</a>
           </Typography>
         </Grid2>
       </Grid2>
