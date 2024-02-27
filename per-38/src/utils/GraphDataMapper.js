@@ -56,6 +56,7 @@ export const GraphDataMapper = {
       type: "multicritere",
       title:
         "Quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche",
+      x_axis_Titles: "Quantité de doctorants/stagiaires/...",
       data: {
         Overall: {
           "0": 57,
@@ -128,6 +129,7 @@ export const GraphDataMapper = {
     {
       type: "multicritere",
       title: "Nbe d'heures de recherche disponibles",
+      x_axis_Titles: "Nbe d'heures de recherche disponibles",
       data: {
         Overall: {
           "0": 109,
