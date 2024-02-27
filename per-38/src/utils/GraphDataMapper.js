@@ -1,6 +1,7 @@
 export const GraphDataMapper = {
   cadre: [
     {
+      type: "monocritere",
       data: [
         { category: "Tout à fait", percentage: 5.59 },
         { category: "Un peu", percentage: 7.49 },
@@ -13,6 +14,7 @@ export const GraphDataMapper = {
         "Les cadres sont moins satisfaits de leur métier que les autres catégories.",
     },
     {
+      type: "monocritere",
       data: [
         { category: "Tout à fait", percentage: 37.64 },
         { category: "Un peu", percentage: 34.07 },
@@ -28,6 +30,7 @@ export const GraphDataMapper = {
   administrative: [], // Empty array for now
   enseignement: [
     {
+      type: "monocritere",
       title: "Appréciation personnelle sur l'enseignement",
       data: [
         { category: "J'aime toujours", percentage: 51.43 },
