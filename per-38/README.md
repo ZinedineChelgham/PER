@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Description
+This project utilizes React, Material-UI (MUI), and d3.js to create interactive charts. The primary goal is to display data visualizations using the d3 library, with styling provided by Material-UI components. Data for the charts is managed through a dataMapper located in the utils folder.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Available Scripts
 
