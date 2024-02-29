@@ -32,7 +32,7 @@ export const GraphDataMapper = {
       type: "multicritere",
       info: "contexte sur le graphique a definir ...",
       title:
-          "Temps passé en moyenne par semaine pour les responsabilités administratives",
+          "Réponse à la question : Quel est le temps passé en moyenne par semaine pour les responsabilités administratives ?",
       x_axis_Titles: "Temps passé en moyenne par semaine",
       data: {
         Base: {
@@ -83,7 +83,7 @@ export const GraphDataMapper = {
     },
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Quel est le temps passé en moyenne par semaine pour les responsabilités pédagogiques ?",
       title:
           "Temps passé en moyenne par semaine pour les responsabilités pédagogiques",
       x_axis_Titles: "Temps passé en moyenne par semaine",
@@ -139,7 +139,7 @@ export const GraphDataMapper = {
   enseignement: [
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Nombre d'heures complémentaires en moyenne ces deux dernières années",
       title:
           "Nombre d'heures complémentaires en moyenne ces deux dernières années",
       x_axis_Titles: "Nombre d'heures complémentaires",
@@ -248,7 +248,7 @@ export const GraphDataMapper = {
 
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Nombre d'heures complémentaires en moyenne ces cinq dernières années",
       title:
           "Nombre d'heures complémentaires en moyenne ces cinq dernières années",
       x_axis_Titles: "Nombre d'heures complémentaires",
@@ -358,9 +358,9 @@ export const GraphDataMapper = {
 
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Nombre moyen d'étudiants inscrits sur La Formation informatique",
       title:
-          "Nombre moyen d'étudiants inscrits sur Formation informatique",
+          "Nombre moyen d'étudiants inscrits sur La Formation informatique",
       x_axis_Titles: "Nombre d'étudiants",
       data: {
         Base: {
@@ -468,7 +468,7 @@ export const GraphDataMapper = {
 
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Nombre moyen d'étudiants inscrits sur les autres formations",
       title:
           "Nombre moyen d'étudiants inscrits sur les autres formations",
       x_axis_Titles: "Nombre d'étudiants",
@@ -576,7 +576,7 @@ export const GraphDataMapper = {
   recherche: [
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Auelle est la quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche ?",
       title:
         "Quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche",
       x_axis_Titles: "Quantité de doctorants/stagiaires/...",
@@ -651,7 +651,7 @@ export const GraphDataMapper = {
     },
     {
       type: "multicritere",
-      info: "contexte sur le graphique a definir ...",
+      info: "Réponse à la question : Nbe d'heures de recherche disponibles",
       title: "Nbe d'heures de recherche disponibles",
       x_axis_Titles: "Nbe d'heures de recherche disponibles",
       data: {

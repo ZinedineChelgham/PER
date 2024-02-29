@@ -30,7 +30,7 @@ function Enseignement() {
   };
 
   return (
-      <div>
+      <div style={{ overflowY: 'auto', maxHeight: '80vh' }}>
         <Typography>Selectionnez une visualisation</Typography>
         <DropDown
             items={cadreData.map((item) => item.title)}

@@ -5,7 +5,7 @@ import data from "../mapManagement/updated_cities4.json";
 
 function Carte() {
   return (
-    <div>
+      <div >
       <Typography variant="h4" textAlign={"center"}>
         Réponse des différentes universités
       </Typography>

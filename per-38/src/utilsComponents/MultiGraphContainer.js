@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import ChartMulti from "../graphics/ChartMulti";
 
 function MultiGraphContainer({ title, data, x_axis, info }) {
-  const [graphType, setGraphType] = useState("pie");
+  const [graphType, setGraphType] = useState("bar");
 
   const handleIconClick = (iconName) => {
     setGraphType(iconName);
