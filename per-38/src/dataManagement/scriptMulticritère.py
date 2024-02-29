@@ -32,7 +32,7 @@ def process_data(data, categories, text_attribute):
 
     # Display the count for each range, gender, status, and fusion
     result_data = {
-        'Overall': overall_range_counters,
+        'Base': overall_range_counters,
         'Sexe': gender_range_counters,
         'Statut': status_range_counters,
         'Sexe_Statut': fusion_range_counters

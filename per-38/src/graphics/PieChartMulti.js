@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import React, { useEffect, useRef, useState } from "react";
 
 const PieChartMulti = ({ data, title, x_axis, info }) => {
-  const [selectedOption, setSelectedOption] = useState("Overall");
+  const [selectedOption, setSelectedOption] = useState("Base");
   const svgRef = useRef();
   const color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -51,7 +51,7 @@ const PieChartMulti = ({ data, title, x_axis, info }) => {
 
     // Function to create checkbox groups
     const createCheckboxGroups = () => {
-      ["Overall", "Sexe", "Statut"].forEach((option) => {
+      ["Base", "Sexe", "Statut"].forEach((option) => {
         const id = `checkbox-${option}`;
         const checkboxGroup = svg
           .append("foreignObject")
@@ -61,7 +61,7 @@ const PieChartMulti = ({ data, title, x_axis, info }) => {
           .attr("height", 100)
           .append("xhtml:div");
 
-        ["Overall", "Sexe", "Statut"].forEach((option) => {
+        ["Base", "Sexe", "Statut"].forEach((option) => {
           const id = `checkbox-${option}`;
           checkboxGroup
             .append("xhtml:input")
@@ -259,7 +259,7 @@ const PieChartMulti = ({ data, title, x_axis, info }) => {
         });
     };
 
-    if (selectedOption !== "Overall") {
+    if (selectedOption !== "Base") {
       drawOriginalChart(data[selectedOption]);
     } else {
       const plotData = data[selectedOption];
@@ -293,7 +293,7 @@ const PieChartMulti = ({ data, title, x_axis, info }) => {
           return `${d.data.key}: ${d.data.value} réponses (${percentage}%)`;
         });
 
-      // Add legend for Overall, Sexe, and Statut
+      // Add legend for Base, Sexe, and Statut
       const legend = g
         .selectAll(".legend")
         .data(keys)

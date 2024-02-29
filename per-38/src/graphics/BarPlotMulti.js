@@ -2,10 +2,10 @@ import * as d3 from "d3";
 import React, { useEffect, useRef, useState } from "react";
 const BarPlot1 = ({ data, title, x_axis, info }) => {
   console.log("🚀 ~ BarPlot1 ~ info:", info);
-  const [selectedOption, setSelectedOption] = useState("Overall");
+  const [selectedOption, setSelectedOption] = useState("Base");
   const svgRef = useRef();
   const color = d3.scaleOrdinal(d3.schemeCategory10); // Set color scale
-  const categories = Object.keys(data["Overall"]);
+  const categories = Object.keys(data["Base"]);
 
   useEffect(() => {
     const margin = { top: 70, right: 300, bottom: 150, left: 70 }, // Increase right margin
@@ -253,7 +253,7 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
     } else {
       let plotData = data[selectedOption];
       let keys = Object.keys(plotData);
-      if (selectedOption === "Overall") {
+      if (selectedOption === "Base") {
         x0.domain(categories);
         y.domain([0, d3.max(Object.values(plotData))]).nice();
         g.selectAll(".bar")
@@ -355,8 +355,8 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x0));
       g.append("g").call(d3.axisLeft(y));
-      let legendKeys = selectedOption === "Overall" ? ["Overall"] : keys;
-      if (selectedOption !== "Overall") {
+      let legendKeys = selectedOption === "Base" ? ["Base"] : keys;
+      if (selectedOption !== "Base") {
         let legend = g
           .append("g")
           .attr("font-family", "sans-serif")
@@ -396,7 +396,7 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
       .attr("height", 100)
       .append("xhtml:div");
 
-    ["Overall", "Sexe", "Statut", "Sexe_Statut"].forEach((option) => {
+    ["Base", "Sexe", "Statut", "Sexe_Statut"].forEach((option) => {
       const id = `checkbox-${option}`;
       const checkboxGroup = svg
         .append("foreignObject")
@@ -406,7 +406,7 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
         .attr("height", 100)
         .append("xhtml:div");
 
-      ["Overall", "Sexe", "Statut", "Sexe_Statut"].forEach((option) => {
+      ["Base", "Sexe", "Statut", "Sexe_Statut"].forEach((option) => {
         const id = `checkbox-${option}`;
         checkboxGroup
           .append("xhtml:input")

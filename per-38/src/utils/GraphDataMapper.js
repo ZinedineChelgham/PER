@@ -35,7 +35,7 @@ export const GraphDataMapper = {
           "Temps passé en moyenne par semaine pour les responsabilités administratives",
       x_axis_Titles: "Temps passé en moyenne par semaine",
       data: {
-        Overall: {
+        Base: {
           "<5": 226,
           "5-8": 213,
           "9-15": 105,
@@ -88,7 +88,7 @@ export const GraphDataMapper = {
           "Temps passé en moyenne par semaine pour les responsabilités pédagogiques",
       x_axis_Titles: "Temps passé en moyenne par semaine",
       data: {
-        Overall: {
+        Base: {
           "<5": 211,
           "5-8": 263,
           "9-15": 130,
@@ -144,7 +144,7 @@ export const GraphDataMapper = {
           "Nombre d'heures complémentaires en moyenne ces deux dernières années",
       x_axis_Titles: "Nombre d'heures complémentaires",
       data: {
-        Overall: {
+        Base: {
           "<50": 177,
           "51-80": 131,
           "81-120": 122,
@@ -253,7 +253,7 @@ export const GraphDataMapper = {
           "Nombre d'heures complémentaires en moyenne ces cinq dernières années",
       x_axis_Titles: "Nombre d'heures complémentaires",
       data: {
-        Overall: {
+        Base: {
           "<50": 139,
           "51-80": 118,
           "81-120": 151,
@@ -363,7 +363,7 @@ export const GraphDataMapper = {
           "Nombre moyen d'étudiants inscrits sur Formation informatique",
       x_axis_Titles: "Nombre d'étudiants",
       data: {
-        Overall: {
+        Base: {
           "<50": 67,
           "50-100": 73,
           "101-150": 57,
@@ -473,7 +473,7 @@ export const GraphDataMapper = {
           "Nombre moyen d'étudiants inscrits sur les autres formations",
       x_axis_Titles: "Nombre d'étudiants",
       data: {
-        Overall: {
+        Base: {
           "<50": 110,
           "50-100": 30,
           "101-150": 29,
@@ -581,7 +581,7 @@ export const GraphDataMapper = {
         "Quantité de doctorants/stagiaires/... ces 5 dernières années contribuant à votre recherche",
       x_axis_Titles: "Quantité de doctorants/stagiaires/...",
       data: {
-        Overall: {
+        Base: {
           "0": 57,
           "1": 126,
           "2": 118,
@@ -655,7 +655,7 @@ export const GraphDataMapper = {
       title: "Nbe d'heures de recherche disponibles",
       x_axis_Titles: "Nbe d'heures de recherche disponibles",
       data: {
-        Overall: {
+        Base: {
           "0": 109,
           "1": 236,
           "2": 198,
