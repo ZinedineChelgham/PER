@@ -52,6 +52,27 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
       .style("font-size", "24px")
       .style("font-weight", "bold")
       .text(title);
+
+    const tooltip = svg
+        .append("g")
+        .attr("class", "tooltip")
+        .style("display", "none");
+
+    tooltip
+        .append("rect")
+        .attr("width", 60)
+        .attr("height", 20)
+        .attr("fill", "white")
+        .style("opacity", 0.8);
+
+    tooltip
+        .append("text")
+        .attr("x", 30)
+        .attr("dy", "1.2em")
+        .style("text-anchor", "middle")
+        .attr("font-size", "12px")
+        .attr("font-weight", "bold");
+
     if (selectedOption === "Sexe_Statut") {
       let plotData_homme_femme = data["Sexe_Statut"];
       let statuts = Object.keys(plotData_homme_femme);
@@ -104,25 +125,42 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
         });
 
       categoryBar
-        .selectAll("rect")
-        .data(function (d) {
-          return d.values;
-        })
-        .enter()
-        .append("rect")
-        .attr("x", function (d) {
-          return x2(d.sex);
-        })
-        .attr("y", function (d) {
-          return y(d.value);
-        })
-        .attr("width", x2.bandwidth())
-        .attr("height", function (d) {
-          return height - y(d.value);
-        })
-        .attr("fill", function (d) {
-          return color(d.sex);
-        });
+          .selectAll("rect")
+          .data(function (d) {
+            return d.values;
+          })
+          .enter()
+          .append("rect")
+          .attr("x", function (d) {
+            return x2(d.sex);
+          })
+          .attr("y", function (d) {
+            return y(d.value);
+          })
+          .attr("width", x2.bandwidth())
+          .attr("height", function (d) {
+            return height - y(d.value);
+          })
+          .attr("fill", function (d) {
+            return color(d.sex);
+          })
+          .on("mouseover", function (event, d) {
+            // Show the text when hovering
+            d3.select(this.parentNode)
+                .append("text")
+                .attr("x", x2(d.sex) + x2.bandwidth() / 2)
+                .attr("y", y(d.value) - 5)
+                .attr("text-anchor", "middle")
+                .style("font-size", "12px")
+                .style("font-weight", "bold")
+                .text(`${d.value} réponses`)
+                .attr("class", "hover-text");
+          })
+          .on("mouseout", function () {
+            // Remove the text when not hovering
+            d3.selectAll(".hover-text").remove();
+          });
+
 
       // Append X and Y axes for Sexe_Statut
       let xAxis = g
@@ -219,21 +257,41 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
         x0.domain(categories);
         y.domain([0, d3.max(Object.values(plotData))]).nice();
         g.selectAll(".bar")
-          .data(Object.entries(plotData))
-          .enter()
-          .append("rect")
-          .attr("class", "bar")
-          .attr("x", function (d) {
-            return x0(d[0]) + x0.bandwidth() / 4;
-          })
-          .attr("width", x0.bandwidth() / 2) // Adjust the division factor to make it smaller
-          .attr("y", function (d) {
-            return y(d[1]);
-          })
-          .attr("height", function (d) {
-            return height - y(d[1]);
-          })
-          .attr("fill", color(0));
+            .data(Object.entries(plotData))
+            .enter()
+            .append("g")
+            .attr("class", "bar-group")
+            .append("rect")
+            .attr("class", "bar")
+            .attr("x", function (d) {
+              return x0(d[0]) + x0.bandwidth() / 4;
+            })
+            .attr("width", x0.bandwidth() / 2)
+            .attr("y", function (d) {
+              return y(d[1]);
+            })
+            .attr("height", function (d) {
+              return height - y(d[1]);
+            })
+            .attr("fill", color(0))
+            .on("mouseover", function (event, d) {
+              // Show the text when hovering
+              d3.select(this.parentNode)
+                  .append("text")
+                  .attr("x", x0(d[0]) + x0.bandwidth() / 2)
+                  .attr("y", y(d[1]) - 5)
+                  .attr("text-anchor", "middle")
+                  .style("font-size", "12px")
+                  .style("font-weight", "bold")
+                  .text(`${d[1]} réponses`)
+                  .attr("class", "hover-text");
+            })
+            .on("mouseout", function () {
+              // Remove the text when not hovering
+              d3.selectAll(".hover-text").remove();
+            });
+
+
       } else {
         x0.domain(categories);
         x1.domain(keys).rangeRound([0, x0.bandwidth()]);
@@ -244,36 +302,53 @@ const BarPlot1 = ({ data, title, x_axis, info }) => {
           }),
         ]).nice();
         let bar = g
-          .append("g")
-          .selectAll("g")
-          .data(categories)
-          .enter()
-          .append("g")
-          .attr("transform", function (d) {
-            return "translate(" + x0(d) + ",0)";
-          });
-        bar
-          .selectAll("rect")
-          .data(function (d) {
-            return keys.map(function (key) {
-              return { key: key, value: plotData[key][d] };
+            .append("g")
+            .selectAll("g")
+            .data(categories)
+            .enter()
+            .append("g")
+            .attr("transform", function (d) {
+              return "translate(" + x0(d) + ",0)";
             });
-          })
-          .enter()
-          .append("rect")
-          .attr("x", function (d) {
-            return x1(d.key);
-          })
-          .attr("y", function (d) {
-            return y(d.value);
-          })
-          .attr("width", x1.bandwidth())
-          .attr("height", function (d) {
-            return height - y(d.value);
-          })
-          .attr("fill", function (d) {
-            return color(d.key);
-          });
+
+        bar
+            .selectAll("rect")
+            .data(function (d) {
+              return keys.map(function (key) {
+                return { key: key, value: plotData[key][d] };
+              });
+            })
+            .enter()
+            .append("rect")
+            .attr("x", function (d) {
+              return x1(d.key);
+            })
+            .attr("y", function (d) {
+              return y(d.value);
+            })
+            .attr("width", x1.bandwidth())
+            .attr("height", function (d) {
+              return height - y(d.value);
+            })
+            .attr("fill", function (d) {
+              return color(d.key);
+            })
+            .on("mouseover", function (event, d) {
+              // Show the text when hovering
+              d3.select(this.parentNode)
+                  .append("text")
+                  .attr("x", x1(d.key) + x1.bandwidth() / 2)
+                  .attr("y", y(d.value) - 5)
+                  .attr("text-anchor", "middle")
+                  .style("font-size", "12px")
+                  .style("font-weight", "bold")
+                  .text(`${d.value} réponses`)
+                  .attr("class", "hover-text");
+            })
+            .on("mouseout", function () {
+              // Remove the text when not hovering
+              d3.selectAll(".hover-text").remove();
+            });
       }
 
       g.append("g")
