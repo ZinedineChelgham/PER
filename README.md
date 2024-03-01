@@ -3,6 +3,13 @@
 # Description
 This project utilizes React, Material-UI (MUI), and d3.js to create interactive charts. The primary goal is to display data visualizations using the d3 library, with styling provided by Material-UI components. Data for the charts is managed through a dataMapper located in the utils folder.
 
+## Prerequisites
+
+Before running this project, ensure you have the following prerequisites installed:
+
+- Node.js: Make sure you have Node.js installed on your system. You can download and install it from [https://nodejs.org/](https://nodejs.org/).
+- npm: npm comes bundled with Node.js. Check if you have npm installed by running `npm -v` in your terminal. If not, install it by following the instructions on the [official npm website](https://www.npmjs.com/get-npm).
+
 
 ## Available Scripts
 
