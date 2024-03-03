@@ -10,6 +10,11 @@ Before running this project, ensure you have the following prerequisites install
 - Node.js: Make sure you have Node.js installed on your system. You can download and install it from [https://nodejs.org/](https://nodejs.org/).
 - npm: npm comes bundled with Node.js. Check if you have npm installed by running `npm -v` in your terminal. If not, install it by following the instructions on the [official npm website](https://www.npmjs.com/get-npm).
 
+## Execute
+- clone the project
+- execute npm i in the root folder (where the package.json file is located)
+- execute npm start in the same root folder
+
 
 ## Available Scripts
 
